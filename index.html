@@ -358,23 +358,29 @@
       <div class="demo-copy">
         <p class="section-kicker">Let's talk</p>
         <h2 class="section-title">Book a demo</h2>
-        <p>See VineStack with your own ministry in mind. Tell us a little about your team and we'll set up a walkthrough.</p>
+        <p>See VineStack with your own team in mind. Tell us a little about what you run and we'll set up a walkthrough.</p>
       </div>
       <form class="demo-form" id="demo-form">
+        <!-- Web3Forms: paste your access key below -->
+        <input type="hidden" name="access_key" value="02f442bd-9383-4622-9229-47c809ecf983" />
+        <input type="hidden" name="subject" value="New VineStack demo request" />
+        <input type="hidden" name="from_name" value="VineStack website" />
+        <!-- honeypot (spam trap; leave hidden) -->
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
         <label>Name
           <input type="text" name="name" required placeholder="Your name" />
         </label>
         <label>Email
-          <input type="email" name="email" required placeholder="you@ministry.org" />
+          <input type="email" name="email" required placeholder="you@yourorg.com" />
         </label>
         <label>Organisation
-          <input type="text" name="organisation" placeholder="Church / academy name" />
+          <input type="text" name="organisation" placeholder="Your organisation" />
         </label>
         <label>What are you hoping to run?
-          <textarea name="message" rows="3" placeholder="Courses, giving, community…"></textarea>
+          <textarea name="message" rows="3" placeholder="Courses, community, payments…"></textarea>
         </label>
         <button class="btn btn-primary block" type="submit">Request a demo</button>
-        <p class="form-note">Opens your email app with the message ready to send.</p>
+        <p class="form-note" id="form-status">No spam. We'll only use this to reply to you.</p>
       </form>
     </div>
   </section>
@@ -430,31 +436,39 @@
       });
     })();
 
-    document.getElementById('demo-form').addEventListener('submit', (e) => {
+    document.getElementById('demo-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-
       const form = e.currentTarget;
-      const data = new FormData(form);
-      const name = data.get('name') || '';
-      const email = data.get('email') || '';
-      const organisation = data.get('organisation') || '';
-      const message = data.get('message') || '';
+      const status = document.getElementById('form-status');
+      const btn = form.querySelector('button[type="submit"]');
+      const original = btn.textContent;
 
-      const subject = `VineStack demo request from ${name || 'website visitor'}`;
-      const body = [
-        'Hi VineStack,',
-        '',
-        'I would like to book a demo.',
-        '',
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Organisation: ${organisation || 'Not provided'}`,
-        '',
-        'What I am hoping to run:',
-        message || 'Not provided',
-      ].join('\n');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      status.textContent = '';
+      status.style.color = '';
 
-      window.location.href = `mailto:jerryjohnthomascreations@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        });
+        const json = await res.json();
+        if (json.success) {
+          form.reset();
+          btn.textContent = 'Sent ✓';
+          status.textContent = "Thanks! We'll be in touch shortly.";
+          status.style.color = 'var(--vine)';
+        } else {
+          throw new Error(json.message || 'Submission failed');
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = original;
+        status.textContent = "Sorry, that didn't send. Please email us directly.";
+        status.style.color = 'var(--danger, #c0392b)';
+      }
     });
   </script>
 </body>
