@@ -351,8 +351,7 @@
         <h2 class="section-title">Book a demo</h2>
         <p>See VineStack with your own ministry in mind. Tell us a little about your team and we'll set up a walkthrough.</p>
       </div>
-      <!-- Replace the action URL with your Formspree endpoint (https://formspree.io) -->
-      <form class="demo-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <form class="demo-form" id="demo-form">
         <label>Name
           <input type="text" name="name" required placeholder="Your name" />
         </label>
@@ -366,7 +365,7 @@
           <textarea name="message" rows="3" placeholder="Courses, giving, community…"></textarea>
         </label>
         <button class="btn btn-primary block" type="submit">Request a demo</button>
-        <p class="form-note">No spam. We'll only use this to get back to you.</p>
+        <p class="form-note">Opens your email app with the message ready to send.</p>
       </form>
     </div>
   </section>
@@ -405,6 +404,33 @@
           if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         }
       });
+    });
+
+    document.getElementById('demo-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const form = e.currentTarget;
+      const data = new FormData(form);
+      const name = data.get('name') || '';
+      const email = data.get('email') || '';
+      const organisation = data.get('organisation') || '';
+      const message = data.get('message') || '';
+
+      const subject = `VineStack demo request from ${name || 'website visitor'}`;
+      const body = [
+        'Hi VineStack,',
+        '',
+        'I would like to book a demo.',
+        '',
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Organisation: ${organisation || 'Not provided'}`,
+        '',
+        'What I am hoping to run:',
+        message || 'Not provided',
+      ].join('\n');
+
+      window.location.href = `mailto:jerryjohnthomascreations@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   </script>
 </body>
