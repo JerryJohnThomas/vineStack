@@ -361,6 +361,56 @@ h1, h2, h3 {
 }
 .price .cur { font-size: 1.4rem; vertical-align: super; color: var(--gold); }
 .price .per { font-size: 1rem; color: var(--ink-mut); font-family: 'Inter', sans-serif; }
+
+/* Billing cycle toggle */
+.billing-toggle {
+  display: flex;
+  width: max-content;
+  margin: 0 auto 2.2rem;
+  padding: 0.3rem;
+  background: var(--ivory2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.bt-opt {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-mut);
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: background var(--trans), color var(--trans);
+}
+.bt-opt.is-active { background: var(--vine); color: var(--ivory); }
+.bt-save { font-size: 0.72rem; font-weight: 700; color: var(--gold); }
+.bt-opt.is-active .bt-save { color: var(--gold-soft); }
+
+/* Annual billing note under price */
+.price-annual-note {
+  margin: -0.95rem 0 1.25rem;
+  font-size: 0.78rem;
+  color: var(--ink-mut);
+  font-family: 'Inter', sans-serif;
+}
+.pcard-featured .price-annual-note { color: rgba(247, 243, 234, 0.7); }
+
+/* Value-stack callout on the featured plan */
+.plus-value {
+  margin: 0.2rem 0 1.3rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid rgba(231, 207, 160, 0.3);
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: rgba(247, 243, 234, 0.9);
+}
+.plus-value .pv-strike { color: rgba(247, 243, 234, 0.5); text-decoration: line-through; }
+.plus-value strong { color: var(--gold-soft); font-weight: 700; }
 .pcard ul {
   list-style: none;
   padding: 0;
