@@ -36,6 +36,7 @@ body {
   background: var(--ivory);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* guard against any element that overhangs the viewport */
 }
 
 img { max-width: 100%; }
@@ -612,13 +613,11 @@ h1, h2, h3 {
   .addon-grid { grid-template-columns: 1fr; }
   .hero-cta .btn { flex: 1; }
 
-  /* Let the hero own the first screen so the trust strip arrives on scroll,
-     not crammed under the fold. 100svh accounts for mobile browser chrome. */
+  /* Tall hero so the trust strip mostly arrives on scroll, without a
+     viewport-height unit (100svh/vh leave a phantom empty screen on some mobile
+     browsers). Padding keeps it comfortably tall and gap-free. */
   .hero {
-    min-height: calc(100svh - 72px);
-    display: flex;
-    align-items: center;
-    padding-block: 2.5rem;
+    padding-block: 3.5rem 5.5rem;
   }
   /* Roomier trust strip on phones. */
   .strip-inner {
