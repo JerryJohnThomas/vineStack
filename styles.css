@@ -611,4 +611,19 @@ h1, h2, h3 {
   .aud-grid { grid-template-columns: 1fr; }
   .addon-grid { grid-template-columns: 1fr; }
   .hero-cta .btn { flex: 1; }
+
+  /* Let the hero own the first screen so the trust strip arrives on scroll,
+     not crammed under the fold. 100svh accounts for mobile browser chrome. */
+  .hero {
+    min-height: calc(100svh - 72px);
+    display: flex;
+    align-items: center;
+    padding-block: 2.5rem;
+  }
+  /* Roomier trust strip on phones. */
+  .strip-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.25rem 1rem;
+    padding-block: 3.25rem;
+  }
 }
