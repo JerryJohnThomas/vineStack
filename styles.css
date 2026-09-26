@@ -149,7 +149,7 @@ h1, h2, h3 {
   margin: 0 0 1.1rem;
 }
 .hero h1 {
-  font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
   color: var(--vine);
 }
 .hero h1 .accent {
@@ -157,7 +157,7 @@ h1, h2, h3 {
   font-style: italic;
 }
 .lede {
-  font-size: clamp(1.05rem, 2.1vw, 1.3rem);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
   color: var(--ink-mut);
   max-width: 620px;
   margin: 1.5rem 0 0;
@@ -199,7 +199,7 @@ h1, h2, h3 {
 .strip-inner div { display: flex; flex-direction: column; gap: 0.25rem; }
 .strip-inner strong {
   font-family: 'Fraunces', serif;
-  font-size: 1.7rem;
+  font-size: 1.45rem;
   color: var(--gold-soft);
 }
 .strip-inner span { font-size: 0.88rem; color: rgba(247, 243, 234, 0.78); }
@@ -215,12 +215,12 @@ h1, h2, h3 {
   margin: 0 0 0.7rem;
 }
 .section-title {
-  font-size: clamp(1.9rem, 4vw, 2.9rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
   color: var(--vine);
   max-width: 700px;
 }
 .section-sub {
-  font-size: 1.08rem;
+  font-size: 1rem;
   color: var(--ink-mut);
   max-width: 620px;
   margin: 1rem 0 2.6rem;
@@ -355,7 +355,7 @@ h1, h2, h3 {
 .ptag { font-size: 0.9rem; color: var(--ink-mut); margin: 0.3rem 0 1.2rem; }
 .price {
   font-family: 'Fraunces', serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--vine);
   margin: 0 0 1.3rem;
   line-height: 1;
@@ -617,8 +617,11 @@ h1, h2, h3 {
      viewport-height unit (100svh/vh leave a phantom empty screen on some mobile
      browsers). Padding keeps it comfortably tall and gap-free. */
   .hero {
-    padding-block: 3.5rem 5.5rem;
+    padding-block: 3.5rem 5rem;
   }
+  /* Decorative glow is wide + absolutely positioned; drop it on phones so it
+     can't contribute any stray scroll height. */
+  .hero-glow { display: none; }
   /* Roomier trust strip on phones. */
   .strip-inner {
     grid-template-columns: repeat(2, 1fr);
