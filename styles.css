@@ -319,8 +319,8 @@ h1, h2, h3 {
 .story-quote blockquote {
   margin: 0;
   font-family: 'Fraunces', serif;
-  font-size: 1.35rem;
-  line-height: 1.4;
+  font-size: 1.12rem;
+  line-height: 1.5;
   font-style: italic;
 }
 .story-quote figcaption {
