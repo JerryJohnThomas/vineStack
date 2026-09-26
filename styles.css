@@ -611,13 +611,15 @@ h1, h2, h3 {
   .grid { grid-template-columns: 1fr; }
   .aud-grid { grid-template-columns: 1fr; }
   .addon-grid { grid-template-columns: 1fr; }
-  .hero-cta .btn { flex: 1; }
+  /* Slimmer hero CTAs on phones — the full-width chunky buttons were too heavy. */
+  .hero-cta .btn { flex: 1; padding: 0.62rem 0.9rem; font-size: 0.88rem; }
 
-  /* Tall hero so the trust strip mostly arrives on scroll, without a
-     viewport-height unit (100svh/vh leave a phantom empty screen on some mobile
-     browsers). Padding keeps it comfortably tall and gap-free. */
+  /* Hero fills the first screen (svh = safe, no phantom gap) so the green strip
+     sits fully below first glance and arrives on scroll. Safe here because the
+     hero is the FIRST section — a min-height can't add space after the footer. */
   .hero {
-    padding-block: 3.5rem 5rem;
+    min-height: 100svh;
+    padding-block: 2.5rem 3rem;
   }
   /* Decorative glow is wide + absolutely positioned; drop it on phones so it
      can't contribute any stray scroll height. */
