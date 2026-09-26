@@ -36,6 +36,7 @@ body {
   background: var(--ivory);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* guard against any element that overhangs the viewport */
 }
 
 img { max-width: 100%; }
@@ -319,8 +320,8 @@ h1, h2, h3 {
 .story-quote blockquote {
   margin: 0;
   font-family: 'Fraunces', serif;
-  font-size: 1.35rem;
-  line-height: 1.4;
+  font-size: 1.12rem;
+  line-height: 1.5;
   font-style: italic;
 }
 .story-quote figcaption {
@@ -611,4 +612,17 @@ h1, h2, h3 {
   .aud-grid { grid-template-columns: 1fr; }
   .addon-grid { grid-template-columns: 1fr; }
   .hero-cta .btn { flex: 1; }
+
+  /* Tall hero so the trust strip mostly arrives on scroll, without a
+     viewport-height unit (100svh/vh leave a phantom empty screen on some mobile
+     browsers). Padding keeps it comfortably tall and gap-free. */
+  .hero {
+    padding-block: 3.5rem 5.5rem;
+  }
+  /* Roomier trust strip on phones. */
+  .strip-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.25rem 1rem;
+    padding-block: 3.25rem;
+  }
 }
