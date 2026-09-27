@@ -620,6 +620,11 @@ h1, h2, h3 {
   .hero {
     min-height: 100svh;
     padding-block: 2.5rem 3rem;
+    /* Center the content within the full-height hero instead of pinning it to the
+       top — otherwise short content leaves all the empty space at the bottom. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   /* Decorative glow is wide + absolutely positioned; drop it on phones so it
      can't contribute any stray scroll height. */
