@@ -284,21 +284,21 @@
       <p class="section-sub">
         Every plan includes the core: programs, enrollment, progress and
         grading. Switch on the extra modules only when your organisation needs
-        them. Prices in ₹.
+        them.
       </p>
 
       <!-- Billing cycle toggle -->
       <div class="billing-toggle" role="group" aria-label="Billing cycle">
         <button type="button" class="bt-opt is-active" data-cycle="monthly">Monthly</button>
-        <button type="button" class="bt-opt" data-cycle="annual">Annual <span class="bt-save">save 10%</span></button>
+        <button type="button" class="bt-opt" data-cycle="annual">Annual <span class="bt-save" data-k="save">save 10%</span></button>
       </div>
 
       <div class="price-grid">
         <article class="pcard">
           <h3>Basic</h3>
           <p class="ptag">Run one cohort at a time, beautifully</p>
-          <p class="price"><span class="cur">₹</span><span class="price-amt" data-monthly="3,999" data-annual="3,599">3,999</span><span class="per">/mo</span></p>
-          <p class="price-annual-note" hidden>₹43,188 billed yearly</p>
+          <p class="price"><span class="cur" data-k="cur">₹</span><span class="price-amt" data-plan="basic">3,999</span><span class="per">/mo</span></p>
+          <p class="price-annual-note" data-plan="basic" hidden>₹43,188 billed yearly</p>
           <ul>
             <li>Core system &amp; grading</li>
             <li><strong>1 active program at a time</strong></li>
@@ -313,8 +313,8 @@
           <div class="pribbon">Most popular · everything included</div>
           <h3>Plus</h3>
           <p class="ptag">The complete system, nothing to bolt on</p>
-          <p class="price"><span class="cur">₹</span><span class="price-amt" data-monthly="7,999" data-annual="7,199">7,999</span><span class="per">/mo</span></p>
-          <p class="price-annual-note" hidden>₹86,388 billed yearly</p>
+          <p class="price"><span class="cur" data-k="cur">₹</span><span class="price-amt" data-plan="plus">7,999</span><span class="per">/mo</span></p>
+          <p class="price-annual-note" data-plan="plus" hidden>₹86,388 billed yearly</p>
           <ul>
             <li><strong>Unlimited programs &amp; courses</strong></li>
             <li>Content &amp; Blog included</li>
@@ -324,15 +324,15 @@
             <li>Up to 1,000 members · 10 staff</li>
             <li>Priority support</li>
           </ul>
-          <p class="plus-value"><span class="pv-strike">₹6,497/mo</span> of add-ons, <strong>included free</strong></p>
+          <p class="plus-value"><span class="pv-strike" data-k="plusValue">₹6,497/mo</span> of add-ons, <strong>included free</strong></p>
           <a class="btn btn-primary block" href="#demo">Book a demo</a>
         </article>
 
         <article class="pcard">
           <h3>Pro</h3>
           <p class="ptag">A partner, not just a platform</p>
-          <p class="price"><span class="cur">₹</span><span class="price-amt" data-monthly="11,999" data-annual="10,799">11,999</span><span class="per">/mo</span></p>
-          <p class="price-annual-note" hidden>₹1,29,588 billed yearly</p>
+          <p class="price"><span class="cur" data-k="cur">₹</span><span class="price-amt" data-plan="pro">11,999</span><span class="per">/mo</span></p>
+          <p class="price-annual-note" data-plan="pro" hidden>₹1,29,588 billed yearly</p>
           <ul>
             <li>Everything in Plus</li>
             <li><strong>Private video hosting included</strong> · fair-use allowance</li>
@@ -356,17 +356,17 @@
         <div class="addon-grid">
           <div class="addon">
             <span class="addon-name">💳 Payments &amp; Giving</span>
-            <span class="addon-price">₹2,499/mo</span>
-            <span class="addon-note">India live today · other countries by onboarding</span>
+            <span class="addon-price" data-k="payments">₹2,499/mo</span>
+            <span class="addon-note" data-k="paymentsNote">India live today · other countries by onboarding</span>
           </div>
           <div class="addon">
             <span class="addon-name">✍️ Content &amp; Blog</span>
-            <span class="addon-price">₹1,999/mo</span>
+            <span class="addon-price" data-k="content">₹1,999/mo</span>
             <span class="addon-note">Publish articles &amp; a journal</span>
           </div>
           <div class="addon">
             <span class="addon-name">💬 Community / Q&amp;A</span>
-            <span class="addon-price">₹1,999/mo</span>
+            <span class="addon-price" data-k="community">₹1,999/mo</span>
             <span class="addon-note">Threaded forums for members</span>
           </div>
           <div class="addon">
@@ -376,15 +376,15 @@
           </div>
           <div class="addon">
             <span class="addon-name">🚀 Onboarding &amp; setup</span>
-            <span class="addon-price">₹9,999 once</span>
+            <span class="addon-price" data-k="onboarding">₹9,999 once</span>
             <span class="addon-note">Waived on annual Plus &amp; Pro</span>
           </div>
         </div>
       </div>
 
       <p class="price-foot">
-        <strong>Payments:</strong> ready for India today via Razorpay. Selling in
-        another country? We'll onboard your local processor together.
+        <strong>Payments:</strong> <span data-k="paymentsFoot">ready for India today via Razorpay. Selling in
+        another country? We'll onboard your local processor together.</span>
         <a href="#demo">Talk to us.</a> Non-profit? <a href="#demo">Ask about our discount.</a>
       </p>
     </div>
@@ -460,19 +460,79 @@
       });
     });
 
-    // Billing cycle toggle (monthly / annual)
+    // Pricing: price list x billing cycle. ?region=us|in picks the list;
+    // otherwise it follows the visitor's location.
     (function () {
+      const PRICES = {
+        in: {
+          cur: '₹', save: 'save 10%',
+          plans: {
+            basic: { monthly: '3,999', annual: '3,599', yearly: '43,188' },
+            plus:  { monthly: '7,999', annual: '7,199', yearly: '86,388' },
+            pro:   { monthly: '11,999', annual: '10,799', yearly: '1,29,588' },
+          },
+          k: {
+            plusValue: '₹6,497/mo', payments: '₹2,499/mo', content: '₹1,999/mo', community: '₹1,999/mo', onboarding: '₹9,999 once',
+            paymentsNote: 'India live today · other countries by onboarding',
+            paymentsFoot: "ready for India today via Razorpay. Selling in another country? We'll onboard your local processor together.",
+          },
+        },
+        us: {
+          cur: '$', save: 'save 17%',
+          plans: {
+            basic: { monthly: '69', annual: '57', yearly: '684' },
+            plus:  { monthly: '149', annual: '124', yearly: '1,488' },
+            pro:   { monthly: '299', annual: '249', yearly: '2,988' },
+          },
+          k: {
+            plusValue: '$97/mo', payments: '$39/mo', content: '$29/mo', community: '$29/mo', onboarding: '$299 once',
+            paymentsNote: 'Your payment processor, set up with you during onboarding',
+            paymentsFoot: 'live in India today. For US organisations, we set up your payment processor with you during onboarding.',
+          },
+        },
+      };
       const opts = document.querySelectorAll('.bt-opt');
-      const amts = document.querySelectorAll('.price-amt');
-      const notes = document.querySelectorAll('.price-annual-note');
+      let region = 'in';
+      let cycle = 'monthly';
+
+      function render() {
+        const P = PRICES[region];
+        document.querySelectorAll('.price-amt').forEach((el) => { el.textContent = P.plans[el.dataset.plan][cycle]; });
+        document.querySelectorAll('.price-annual-note').forEach((el) => {
+          el.textContent = P.cur + P.plans[el.dataset.plan].yearly + ' billed yearly';
+          el.hidden = cycle !== 'annual';
+        });
+        document.querySelectorAll('[data-k]').forEach((el) => {
+          const key = el.dataset.k;
+          el.textContent = key === 'cur' ? P.cur : key === 'save' ? P.save : P.k[key];
+        });
+      }
+      function setRegion(r) {
+        if (!PRICES[r]) return;
+        region = r;
+        render();
+      }
+
       opts.forEach((btn) => {
         btn.addEventListener('click', () => {
-          const cycle = btn.dataset.cycle;
+          cycle = btn.dataset.cycle;
           opts.forEach((b) => b.classList.toggle('is-active', b === btn));
-          amts.forEach((a) => { a.textContent = a.dataset[cycle]; });
-          notes.forEach((n) => { n.hidden = cycle !== 'annual'; });
+          render();
         });
       });
+
+      const fromUrl = (new URLSearchParams(location.search).get('region') || '').toLowerCase();
+      if (PRICES[fromUrl]) { setRegion(fromUrl); return; }
+
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      setRegion(/^Asia\/(Kolkata|Calcutta)$/.test(tz) ? 'in' : 'us');
+      fetch('/cdn-cgi/trace', { cache: 'no-store' })
+        .then((res) => (res.ok ? res.text() : ''))
+        .then((t) => {
+          const loc = (t.match(/^loc=([A-Z]{2})$/m) || [])[1];
+          if (loc) setRegion(loc === 'IN' ? 'in' : 'us');
+        })
+        .catch(() => {});
     })();
 
     document.getElementById('demo-form').addEventListener('submit', async (e) => {
