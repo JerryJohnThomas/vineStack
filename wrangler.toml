@@ -1,5 +1,10 @@
 name = "vinestack"
+main = "worker.js"
 compatibility_date = "2025-01-01"
 
 [assets]
 directory = "./"
+binding = "ASSETS"
+# Run the worker for every request so the HTML page is region-rewritten;
+# everything else is passed straight to the static assets.
+run_worker_first = true

@@ -1,0 +1,9 @@
+# Not public: deploy config, the edge worker (holds no secrets, but stays private), notes.
+worker.js
+wrangler.toml
+readme.md
+.assetsignore
+.git
+.gitignore
+node_modules
+.wrangler

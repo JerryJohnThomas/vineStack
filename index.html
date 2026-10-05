@@ -55,8 +55,9 @@
     "url": "https://vinestack.app/",
     "description": "The operating system for your organisation: programs, people, assessments, content, community and payments in one unified system. Built for education first, ready for any organisation.",
     "offers": {
-      "@type": "Offer",
-      "price": "2499",
+      "@type": "AggregateOffer",
+      "lowPrice": "3999",
+      "highPrice": "11999",
       "priceCurrency": "INR"
     }
   }
@@ -447,6 +448,7 @@
     </div>
   </footer>
 
+  <script type="application/json" id="vs-prices">{"in": {"currency": "INR", "cur": "₹", "save": "save 10%", "plans": {"basic": {"monthly": "3,999", "annual": "3,599", "yearly": "43,188"}, "plus": {"monthly": "7,999", "annual": "7,199", "yearly": "86,388"}, "pro": {"monthly": "11,999", "annual": "10,799", "yearly": "1,29,588"}}, "k": {"plusValue": "₹6,497/mo", "payments": "₹2,499/mo", "content": "₹1,999/mo", "community": "₹1,999/mo", "onboarding": "₹9,999 once", "paymentsNote": "India live today · other countries by onboarding", "paymentsFoot": "ready for India today via Razorpay. Selling in another country? We'll onboard your local processor together."}}, "us": {"currency": "USD", "cur": "$", "save": "save 17%", "plans": {"basic": {"monthly": "69", "annual": "57", "yearly": "684"}, "plus": {"monthly": "149", "annual": "124", "yearly": "1,488"}, "pro": {"monthly": "299", "annual": "249", "yearly": "2,988"}}, "k": {"plusValue": "$97/mo", "payments": "$39/mo", "content": "$29/mo", "community": "$29/mo", "onboarding": "$299 once", "paymentsNote": "Your payment processor, set up with you during onboarding", "paymentsFoot": "live in India today. For US organisations, we set up your payment processor with you during onboarding."}}}</script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     // Smooth-scroll for in-page anchors
@@ -460,37 +462,9 @@
       });
     });
 
-    // Pricing: price list x billing cycle. ?region=us|in picks the list;
-    // otherwise it follows the visitor's location.
+    // Pricing: price list x billing cycle. The list comes from #vs-prices.
     (function () {
-      const PRICES = {
-        in: {
-          cur: '₹', save: 'save 10%',
-          plans: {
-            basic: { monthly: '3,999', annual: '3,599', yearly: '43,188' },
-            plus:  { monthly: '7,999', annual: '7,199', yearly: '86,388' },
-            pro:   { monthly: '11,999', annual: '10,799', yearly: '1,29,588' },
-          },
-          k: {
-            plusValue: '₹6,497/mo', payments: '₹2,499/mo', content: '₹1,999/mo', community: '₹1,999/mo', onboarding: '₹9,999 once',
-            paymentsNote: 'India live today · other countries by onboarding',
-            paymentsFoot: "ready for India today via Razorpay. Selling in another country? We'll onboard your local processor together.",
-          },
-        },
-        us: {
-          cur: '$', save: 'save 17%',
-          plans: {
-            basic: { monthly: '69', annual: '57', yearly: '684' },
-            plus:  { monthly: '149', annual: '124', yearly: '1,488' },
-            pro:   { monthly: '299', annual: '249', yearly: '2,988' },
-          },
-          k: {
-            plusValue: '$97/mo', payments: '$39/mo', content: '$29/mo', community: '$29/mo', onboarding: '$299 once',
-            paymentsNote: 'Your payment processor, set up with you during onboarding',
-            paymentsFoot: 'live in India today. For US organisations, we set up your payment processor with you during onboarding.',
-          },
-        },
-      };
+      const PRICES = JSON.parse(document.getElementById('vs-prices').textContent);
       const opts = document.querySelectorAll('.bt-opt');
       let region = 'in';
       let cycle = 'monthly';
@@ -521,6 +495,10 @@
         });
       });
 
+      const served = Object.keys(PRICES);
+      if (served.length === 1) { setRegion(served[0]); return; }
+
+      // No edge worker (local preview): pick the list in the browser.
       const fromUrl = (new URLSearchParams(location.search).get('region') || '').toLowerCase();
       if (PRICES[fromUrl]) { setRegion(fromUrl); return; }
 
