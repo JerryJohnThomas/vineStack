@@ -332,6 +332,111 @@ h1, h2, h3 {
   color: var(--gold-soft);
 }
 
+/* ---------- Live demo ---------- */
+.live-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.live-copy p { color: var(--ink-mut); margin: 1rem 0 0; }
+.live-copy .live-note { font-size: 0.85rem; margin-top: 1rem; }
+/* A stylised preview of the demo site (pure CSS, so it never goes stale). */
+.live-frame {
+  display: block;
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  color: inherit;
+  transition: transform var(--trans), box-shadow var(--trans);
+}
+.live-frame:hover { transform: translateY(-3px); color: inherit; }
+.live-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.6rem 0.8rem;
+  background: var(--ivory2);
+  border-bottom: 1px solid var(--line);
+}
+.live-bar i { width: 9px; height: 9px; border-radius: 50%; background: #d8cfbb; }
+.live-url {
+  flex: 1;
+  margin-left: 0.6rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--white);
+  font-size: 0.75rem;
+  color: var(--ink-mut);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.live-site {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1rem 1.4rem;
+  text-align: center;
+  background:
+    radial-gradient(60% 50% at 15% 0%, rgba(255, 154, 118, 0.28), transparent 70%),
+    radial-gradient(60% 60% at 85% 10%, rgba(192, 139, 255, 0.26), transparent 70%),
+    radial-gradient(50% 50% at 50% 100%, rgba(106, 168, 255, 0.16), transparent 70%),
+    #fbfaf8;
+}
+.live-nav {
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 16px -8px rgba(22, 26, 51, 0.25);
+  font-size: 0.72rem;
+  color: #6a6f86;
+}
+.live-nav b { color: #161a33; font-size: 0.78rem; }
+.live-chip {
+  margin-top: 0.6rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(22, 26, 51, 0.08);
+  font-size: 0.68rem;
+  color: #2a2f4a;
+}
+.live-h {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: #161a33;
+}
+.live-h em {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  background: linear-gradient(110deg, #ff9a76, #c08bff 50%, #6aa8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.live-cards {
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255, 212, 194, 0.5), rgba(226, 210, 255, 0.5) 50%, rgba(214, 232, 255, 0.55));
+}
+.live-cards span { height: 52px; border-radius: 10px; background: rgba(255, 255, 255, 0.85); }
+
 /* ---------- Pricing ---------- */
 .price-grid {
   display: grid;
@@ -599,6 +704,7 @@ h1, h2, h3 {
   .aud-grid { grid-template-columns: repeat(2, 1fr); }
   .addon-grid { grid-template-columns: repeat(2, 1fr); }
   .story-inner,
+  .live-inner,
   .demo-inner { grid-template-columns: 1fr; gap: 2rem; }
   .price-grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
   .pcard-featured { transform: none; }
