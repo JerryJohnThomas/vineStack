@@ -28,6 +28,8 @@
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
+/* Anchor jumps land below the sticky nav, not under it. */
+section[id] { scroll-margin-top: 80px; }
 
 body {
   margin: 0;
@@ -763,16 +765,25 @@ h1, h2, h3 {
   font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.08rem; color: var(--vine);
 }
 .faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary::after {
-  content: "+"; position: absolute; right: 0.25rem; top: 50%; transform: translateY(-50%);
-  width: 1.8rem; height: 1.8rem; border-radius: 50%; border: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Inter', sans-serif; font-weight: 400; font-size: 1.15rem; color: var(--gold);
-  transition: transform var(--trans), background var(--trans);
-}
-.faq-item[open] summary::after { content: "−"; background: var(--ivory2); }
+.faq-item summary { transition: color var(--trans); }
 .faq-item summary:hover { color: var(--vine-dark); }
+/* The +/− icon: the vertical bar turns and folds flat when open. */
+.faq-ic {
+  position: absolute; top: 50%; right: 0.25rem; width: 1.8rem; height: 1.8rem; margin-top: -0.9rem;
+  border-radius: 50%; border: 1px solid var(--line); box-sizing: border-box;
+  transition: background 280ms ease, border-color 280ms ease, transform 280ms cubic-bezier(.2,.7,.2,1);
+}
+.faq-ic::before, .faq-ic::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 11px; height: 1.6px; margin: -0.8px 0 0 -5.5px;
+  border-radius: 2px; background: var(--gold);
+  transition: transform 280ms cubic-bezier(.2,.7,.2,1), opacity 200ms ease;
+}
+.faq-ic::after { transform: rotate(90deg); }
+.faq-item summary:hover .faq-ic { border-color: var(--gold-soft); }
+.faq-item[open]:not(.is-closing) .faq-ic { background: var(--ivory2); border-color: var(--gold-soft); transform: rotate(180deg); }
+.faq-item[open]:not(.is-closing) .faq-ic::after { transform: rotate(0deg); opacity: 0; }
 .faq-item summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 6px; }
+.faq-a { overflow: hidden; }
 .faq-item p { margin: 0 0 1.2rem; padding-right: 2.5rem; color: var(--ink-mut); font-size: 0.97rem; }
 
 /* ---------- Responsive ---------- */

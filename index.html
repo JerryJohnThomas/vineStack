@@ -551,36 +551,36 @@
       </div>
       <div class="faq-list">
         <details class="faq-item">
-          <summary>Who is VineStack for?</summary>
-          <p>Academies, churches and faith organisations, non-profits, coaches and training organisations: anyone who runs programs, teaches or trains people, and wants their community in one place. It is built for education first and works for any organisation that gathers and grows people.</p>
+          <summary>Who is VineStack for?<span class="faq-ic" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Academies, churches and faith organisations, non-profits, coaches and training organisations: anyone who runs programs, teaches or trains people, and wants their community in one place. It is built for education first and works for any organisation that gathers and grows people.</p></div>
         </details>
         <details class="faq-item">
-          <summary>What does VineStack replace?</summary>
-          <p>Most organisations stitch together a course platform, a quiz or grading tool, event sign-up forms, a donation page, a blog and a member spreadsheet. VineStack does all of it in one system, with one member list, one login and one design.</p>
+          <summary>What does VineStack replace?<span class="faq-ic" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Most organisations stitch together a course platform, a quiz or grading tool, event sign-up forms, a donation page, a blog and a member spreadsheet. VineStack does all of it in one system, with one member list, one login and one design.</p></div>
         </details>
         <details class="faq-item">
-          <summary>How do payments work, and which countries do you support?</summary>
-          <p>Course fees, event registrations and donations go straight into your organisation's own payment account. VineStack never holds your money. Razorpay is supported today and Stripe is on the way, and we set up your payment provider with you during onboarding.</p>
+          <summary>How do payments work, and which countries do you support?<span class="faq-ic" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Course fees, event registrations and donations go straight into your organisation's own payment account. VineStack never holds your money. Razorpay is supported today and Stripe is on the way, and we set up your payment provider with you during onboarding.</p></div>
         </details>
         <details class="faq-item">
-          <summary>Can we use our own domain and branding?</summary>
-          <p>Yes. On Plus and Pro your site runs on your own domain, with your colours, fonts, menu and homepage, all set from the admin console without code.</p>
+          <summary>Can we use our own domain and branding?<span class="faq-ic" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Yes. On Plus and Pro your site runs on your own domain, with your colours, fonts, menu and homepage, all set from the admin console without code.</p></div>
         </details>
         <details class="faq-item">
-          <summary>Is our data kept separate and backed up?</summary>
-          <p>Yes. Every organisation's data is kept separate from every other organisation's, and the whole system is backed up automatically to private storage on a schedule.</p>
+          <summary>Is our data kept separate and backed up?<span class="faq-ic" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Yes. Every organisation's data is kept separate from every other organisation's, and the whole system is backed up automatically to private storage on a schedule.</p></div>
         </details>
         <details class="faq-item">
-          <summary>What does “Works with Claude” mean?</summary>
-          <p>On Pro, you can connect Claude to VineStack and run everyday work by asking: grade the next submission, approve sign-ups, check who still owes fees, draft and publish an article. Claude acts with your own permissions, every change is confirmed before it happens, and admins decide whether it is switched on.</p>
+          <summary>What does “Works with Claude” mean?<span class="faq-ic" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>On Pro, you can connect Claude to VineStack and run everyday work by asking: grade the next submission, approve sign-ups, check who still owes fees, draft and publish an article. Claude acts with your own permissions, every change is confirmed before it happens, and admins decide whether it is switched on.</p></div>
         </details>
         <details class="faq-item">
-          <summary>Does it work on phones?</summary>
-          <p>Yes. Every page, from lessons and quizzes to the admin tools, is built to work on phones, tablets and desktops.</p>
+          <summary>Does it work on phones?<span class="faq-ic" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Yes. Every page, from lessons and quizzes to the admin tools, is built to work on phones, tablets and desktops.</p></div>
         </details>
         <details class="faq-item">
-          <summary>Can you help us move from our current tools?</summary>
-          <p>Yes. Onboarding and setup is available on every plan and is waived on annual Plus and Pro, and on Pro we migrate your data for you. Non-profits can ask about our discount.</p>
+          <summary>Can you help us move from our current tools?<span class="faq-ic" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Yes. Onboarding and setup is available on every plan and is waived on annual Plus and Pro, and on Pro we migrate your data for you. Non-profits can ask about our discount.</p></div>
         </details>
       </div>
     </div>
@@ -708,6 +708,35 @@
         })
         .catch(() => {});
     })();
+
+    // FAQ: smooth open/close (native <details> snaps). Height is animated with
+    // the Web Animations API; reduced-motion users get the instant toggle.
+    document.querySelectorAll('.faq-item').forEach((item) => {
+      const summary = item.querySelector('summary');
+      const body = item.querySelector('.faq-a');
+      summary.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (item.dataset.busy) return;
+        const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches || !body.animate;
+        if (!item.open) {
+          item.open = true;
+          if (still) return;
+          item.dataset.busy = '1';
+          body.animate(
+            [{ height: '0px', opacity: 0 }, { height: body.scrollHeight + 'px', opacity: 1 }],
+            { duration: 280, easing: 'cubic-bezier(.2,.7,.2,1)' },
+          ).onfinish = () => { delete item.dataset.busy; };
+        } else {
+          if (still) { item.open = false; return; }
+          item.dataset.busy = '1';
+          item.classList.add('is-closing');
+          body.animate(
+            [{ height: body.offsetHeight + 'px', opacity: 1 }, { height: '0px', opacity: 0 }],
+            { duration: 220, easing: 'cubic-bezier(.4,0,.6,1)' },
+          ).onfinish = () => { item.open = false; item.classList.remove('is-closing'); delete item.dataset.busy; };
+        }
+      });
+    });
 
     document.getElementById('demo-form').addEventListener('submit', async (e) => {
       e.preventDefault();
