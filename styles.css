@@ -698,6 +698,83 @@ h1, h2, h3 {
 .footer-links a:hover { color: var(--gold); }
 .copyright { margin: 0.6rem 0 0; font-size: 0.82rem; color: rgba(247, 243, 234, 0.55); }
 
+/* ---------- What it replaces ---------- */
+.replaces { padding-block: clamp(3rem, 7vw, 4.75rem) 0; }
+.replaces-inner { text-align: center; }
+.replaces-title { font-size: clamp(1.5rem, 3vw, 2.1rem); color: var(--vine); }
+.replaces-title .accent { color: var(--gold); font-style: italic; }
+.replaces-row {
+  display: flex; align-items: center; justify-content: center; gap: 1.1rem 1.4rem;
+  flex-wrap: wrap; margin-top: 1.8rem;
+}
+.replaces-old {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.55rem; max-width: 420px;
+}
+.replaces-old li {
+  padding: 0.45rem 0.9rem; border-radius: 999px;
+  border: 1px dashed #cfc6b1; background: rgba(255, 255, 255, 0.5);
+  font-size: 0.88rem; color: var(--ink-mut);
+  text-decoration: line-through; text-decoration-color: rgba(198, 155, 83, 0.75); text-decoration-thickness: 1.5px;
+}
+.replaces-arrow { font-size: 1.5rem; color: var(--gold); }
+.replaces-new {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.7rem 1.3rem; border-radius: 999px;
+  background: var(--vine); color: var(--ivory); box-shadow: var(--shadow-sm);
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem;
+}
+.replaces-new .brand-mark { width: 22px; height: 22px; }
+.replaces-note { margin: 1.2rem 0 0; font-size: 0.92rem; color: var(--ink-mut); }
+
+/* Works with Claude module card */
+.mcard-claude { border-color: var(--gold-soft); background: linear-gradient(180deg, #fffaf0, var(--white)); }
+.mtag {
+  display: inline-block; vertical-align: middle; margin-left: 0.35rem;
+  padding: 0.12rem 0.5rem; border-radius: 999px; background: var(--gold); color: var(--vine-dark);
+  font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+/* ---------- Trust ---------- */
+.trust { background: var(--ivory2); }
+.trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+.trust-item {
+  position: relative; background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.5rem 1.4rem 1.45rem 3.3rem;
+}
+.trust-item::before {
+  content: "✓"; position: absolute; left: 1.3rem; top: 1.45rem;
+  width: 1.45rem; height: 1.45rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--vine); color: var(--gold-soft); font-size: 0.75rem; font-weight: 700;
+}
+.trust-item h3 { font-size: 1.08rem; color: var(--vine); margin-bottom: 0.4rem; }
+.trust-item p { margin: 0; font-size: 0.92rem; color: var(--ink-mut); }
+
+/* ---------- FAQ ---------- */
+.faq-inner { display: grid; grid-template-columns: 0.8fr 1.4fr; gap: 3rem; align-items: start; }
+.faq-more { color: var(--ink-mut); margin: 1rem 0 0; font-size: 0.95rem; }
+.faq-more a { font-weight: 600; border-bottom: 1px solid var(--gold-soft); }
+.faq-list { border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item summary {
+  list-style: none; cursor: pointer; position: relative;
+  padding: 1.15rem 2.5rem 1.15rem 0;
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.08rem; color: var(--vine);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; position: absolute; right: 0.25rem; top: 50%; transform: translateY(-50%);
+  width: 1.8rem; height: 1.8rem; border-radius: 50%; border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Inter', sans-serif; font-weight: 400; font-size: 1.15rem; color: var(--gold);
+  transition: transform var(--trans), background var(--trans);
+}
+.faq-item[open] summary::after { content: "−"; background: var(--ivory2); }
+.faq-item summary:hover { color: var(--vine-dark); }
+.faq-item summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 6px; }
+.faq-item p { margin: 0 0 1.2rem; padding-right: 2.5rem; color: var(--ink-mut); font-size: 0.97rem; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
@@ -705,7 +782,9 @@ h1, h2, h3 {
   .addon-grid { grid-template-columns: repeat(2, 1fr); }
   .story-inner,
   .live-inner,
+  .faq-inner,
   .demo-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .price-grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
   .pcard-featured { transform: none; }
   .strip-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -717,6 +796,10 @@ h1, h2, h3 {
   .grid { grid-template-columns: 1fr; }
   .aud-grid { grid-template-columns: 1fr; }
   .addon-grid { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .replaces-arrow { transform: rotate(90deg); width: 100%; }
+  .replaces-old li { font-size: 0.82rem; padding: 0.4rem 0.75rem; }
+  .faq-item p { padding-right: 0; }
   /* Slimmer hero CTAs on phones — the full-width chunky buttons were too heavy. */
   .hero-cta .btn { flex: 1; padding: 0.62rem 0.9rem; font-size: 0.88rem; }
 

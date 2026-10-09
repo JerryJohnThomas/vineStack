@@ -15,8 +15,8 @@
 
   <!-- Primary meta -->
   <title>VineStack: The operating system for your organisation</title>
-  <meta name="description" content="VineStack is the operating system for your organisation: programs, people, assessments, content, community and payments in one unified system, instead of six disconnected tools. Built for education first, ready for any organisation." />
-  <meta name="keywords" content="organisation OS, all-in-one platform, LMS, learning platform, online courses, grading, member management, community platform, academy software, ministry software, non-profit software, VineStack" />
+  <meta name="description" content="VineStack is the operating system for academies, churches, non-profits and training organisations: courses and programs, quizzes and grading, events, content, community and payments in one system instead of six disconnected tools." />
+  <meta name="keywords" content="organisation OS, all-in-one platform, LMS, learning management system, online courses, quizzes and grading, event registration, online giving, donations, member management, community platform, academy software, church software, ministry software, non-profit software, VineStack" />
   <meta name="author" content="VineStack" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#1c3d34" />
@@ -50,10 +50,14 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "VineStack",
-    "applicationCategory": "BusinessApplication",
+    "applicationCategory": "EducationalApplication",
+    "applicationSubCategory": "Learning and organisation management",
     "operatingSystem": "Web",
     "url": "https://vinestack.app/",
-    "description": "The operating system for your organisation: programs, people, assessments, content, community and payments in one unified system. Built for education first, ready for any organisation.",
+    "image": "https://vinestack.app/og-image.png",
+    "description": "The operating system for academies, churches, non-profits and training organisations: courses and programs, quizzes and grading, events, content, community and payments in one system.",
+    "featureList": "Programs and courses, Quizzes and grading, Progress tracking, Event registration, Articles and blog, Q&A community, Fees and online giving, Roles and permissions, Custom domain and branding, Works with Claude (MCP)",
+    "publisher": { "@type": "Organization", "name": "VineStack", "url": "https://vinestack.app/" },
     "offers": {
       "@type": "AggregateOffer",
       "lowPrice": "3999",
@@ -61,6 +65,88 @@
       "priceCurrency": "INR"
     }
   }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "VineStack",
+  "url": "https://vinestack.app/",
+  "logo": "https://vinestack.app/apple-touch-icon.png",
+  "description": "VineStack makes the operating system for academies, churches, non-profits and training organisations."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is VineStack for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Academies, churches and faith organisations, non-profits, coaches and training organisations: anyone who runs programs, teaches or trains people, and wants their community in one place. It is built for education first and works for any organisation that gathers and grows people."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does VineStack replace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most organisations stitch together a course platform, a quiz or grading tool, event sign-up forms, a donation page, a blog and a member spreadsheet. VineStack does all of it in one system, with one member list, one login and one design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do payments work, and which countries do you support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Course fees, event registrations and donations go straight into your organisation's own payment account. VineStack never holds your money. Razorpay is supported today and Stripe is on the way, and we set up your payment provider with you during onboarding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we use our own domain and branding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. On Plus and Pro your site runs on your own domain, with your colours, fonts, menu and homepage, all set from the admin console without code."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is our data kept separate and backed up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every organisation's data is kept separate from every other organisation's, and the whole system is backed up automatically to private storage on a schedule."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does “Works with Claude” mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Pro, you can connect Claude to VineStack and run everyday work by asking: grade the next submission, approve sign-ups, check who still owes fees, draft and publish an article. Claude acts with your own permissions, every change is confirmed before it happens, and admins decide whether it is switched on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on phones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every page, from lessons and quizzes to the admin tools, is built to work on phones, tablets and desktops."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help us move from our current tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Onboarding and setup is available on every plan and is waived on annual Plus and Pro, and on Pro we migrate your data for you. Non-profits can ask about our discount."
+      }
+    }
+  ]
+}
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -86,6 +172,7 @@
         <a href="#modules">Modules</a>
         <a href="#live">Live demo</a>
         <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
         <a class="btn btn-ghost" href="#demo">Book a demo</a>
       </nav>
     </div>
@@ -94,12 +181,12 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="wrap hero-inner">
-      <p class="eyebrow">The OS for academies &amp; training orgs</p>
+      <p class="eyebrow">The OS for academies, churches &amp; training orgs</p>
       <h1>Run your academy<br /><span class="accent">on one system.</span></h1>
       <p class="lede">
-        Programs and courses, assessments and progress, content, community and
-        payments — one system, not six scattered tools. Built for education,
-        ready for any organisation.
+        Courses and programs, quizzes and grading, events, content, community
+        and payments — one system, not six scattered tools. For academies,
+        churches, non-profits and anyone who teaches, gathers or trains people.
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#demo">Book a demo</a>
@@ -117,6 +204,34 @@
       <div><strong>Modular</strong><span>turn modules on as you grow</span></div>
       <div><strong>Unified</strong><span>shared members, roles &amp; design</span></div>
       <div><strong>Mobile</strong><span>works on every device</span></div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT IT REPLACES ============ -->
+  <section class="replaces" aria-labelledby="replaces-title">
+    <div class="wrap replaces-inner">
+      <p class="section-kicker">What it replaces</p>
+      <h2 class="replaces-title" id="replaces-title">Six tools and a spreadsheet, <span class="accent">one login.</span></h2>
+      <div class="replaces-row">
+        <ul class="replaces-old" aria-label="Tools you no longer need">
+          <li>Course platform</li>
+          <li>Quiz &amp; grading tool</li>
+          <li>Event sign-up forms</li>
+          <li>Donation page</li>
+          <li>Blog</li>
+          <li>Member spreadsheet</li>
+        </ul>
+        <span class="replaces-arrow" aria-hidden="true">→</span>
+        <span class="replaces-new">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 29c0-6-4-9-9-11 5-1 9 1 9 6zM16 29c0-8 5-11 11-13-6-1-11 2-11 9z" fill="currentColor"/>
+            <path d="M16 29V7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+            <circle cx="16" cy="5" r="3" fill="currentColor"/>
+          </svg>
+          VineStack
+        </span>
+      </div>
+      <p class="replaces-note">One member list, one design, one bill.</p>
     </div>
   </section>
 
@@ -195,22 +310,22 @@
         <article class="mcard">
           <div class="micon">💳</div>
           <h3>Payments, Giving &amp; Fundraising</h3>
-          <p>Collect fees and accept one-time or recurring giving, fees and donations kept distinct. <strong>Live for India today</strong> via Razorpay; other countries added with a short onboarding.</p>
+          <p>Course fees, event registrations and one-time or recurring giving, with fees and donations kept distinct. Money goes <strong>straight into your own account</strong> through the payment provider you use.</p>
         </article>
         <article class="mcard">
           <div class="micon">👥</div>
           <h3>People &amp; Roles</h3>
           <p>Admins, faculty, TAs, editors and members, with clear permissions and one member directory across every module.</p>
         </article>
-        <article class="mcard">
-          <div class="micon">🎛️</div>
-          <h3>Configurable</h3>
-          <p>Feature flags let you enable modules per organisation. Start small, grow into the system at your own pace.</p>
+        <article class="mcard mcard-claude">
+          <div class="micon">✳️</div>
+          <h3>Works with Claude <span class="mtag">Pro</span></h3>
+          <p>Run your organisation by asking: grade the next submission, approve sign-ups, publish an article. Claude acts with your permissions and confirms every change first.</p>
         </article>
         <article class="mcard mcard-quiet">
           <div class="micon">✨</div>
           <h3>And the details</h3>
-          <p>Mobile-friendly by default, SEO-ready sharing, a single unified dashboard, and a design language made to feel calm.</p>
+          <p>Switch modules on as you grow, mobile-friendly by default, SEO-ready sharing, one unified dashboard, and a design language made to feel calm.</p>
         </article>
       </div>
     </div>
@@ -274,6 +389,41 @@
           <span class="live-cards"><span></span><span></span><span></span></span>
         </span>
       </a>
+    </div>
+  </section>
+
+  <!-- ============ TRUST ============ -->
+  <section class="section trust" id="trust">
+    <div class="wrap">
+      <p class="section-kicker">Built to be trusted</p>
+      <h2 class="section-title">Your organisation, your data, your money</h2>
+      <p class="section-sub">The quiet things that matter when people's learning, records and giving live in one place.</p>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>Your data, kept separate</h3>
+          <p>Every organisation's records are kept apart from every other organisation's, by design.</p>
+        </div>
+        <div class="trust-item">
+          <h3>Backed up automatically</h3>
+          <p>The whole system is backed up on a schedule to private storage, so nothing hangs on a single copy.</p>
+        </div>
+        <div class="trust-item">
+          <h3>Paid into your own account</h3>
+          <p>Fees and donations go straight to your organisation's payment account. We never hold your money.</p>
+        </div>
+        <div class="trust-item">
+          <h3>Your name, your domain</h3>
+          <p>Your own domain, colours, fonts and homepage, so members see your organisation, not ours.</p>
+        </div>
+        <div class="trust-item">
+          <h3>Clear roles &amp; permissions</h3>
+          <p>Admins, organisers, finance, faculty, TAs and members each see exactly what they should.</p>
+        </div>
+        <div class="trust-item">
+          <h3>AI on your terms</h3>
+          <p>Works with Claude only when an admin switches it on, and every change waits for a clear yes.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -359,7 +509,7 @@
           <div class="addon">
             <span class="addon-name">💳 Payments &amp; Giving</span>
             <span class="addon-price" data-k="payments">₹2,499/mo</span>
-            <span class="addon-note" data-k="paymentsNote">India live today · other countries by onboarding</span>
+            <span class="addon-note" data-k="paymentsNote">Paid straight into your own account</span>
           </div>
           <div class="addon">
             <span class="addon-name">✍️ Content &amp; Blog</span>
@@ -385,10 +535,54 @@
       </div>
 
       <p class="price-foot">
-        <strong>Payments:</strong> <span data-k="paymentsFoot">ready for India today via Razorpay. Selling in
-        another country? We'll onboard your local processor together.</span>
+        <strong>Payments:</strong> <span data-k="paymentsFoot">fees and donations go straight into your organisation's own account. Razorpay is supported today and Stripe is on the way. We'll set up your payment provider with you during onboarding.</span>
         <a href="#demo">Talk to us.</a> Non-profit? <a href="#demo">Ask about our discount.</a>
       </p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq" id="faq">
+    <div class="wrap faq-inner">
+      <div>
+        <p class="section-kicker">Questions</p>
+        <h2 class="section-title">Frequently asked</h2>
+        <p class="faq-more">Something else on your mind? <a href="#demo">Ask us directly.</a></p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Who is VineStack for?</summary>
+          <p>Academies, churches and faith organisations, non-profits, coaches and training organisations: anyone who runs programs, teaches or trains people, and wants their community in one place. It is built for education first and works for any organisation that gathers and grows people.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does VineStack replace?</summary>
+          <p>Most organisations stitch together a course platform, a quiz or grading tool, event sign-up forms, a donation page, a blog and a member spreadsheet. VineStack does all of it in one system, with one member list, one login and one design.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do payments work, and which countries do you support?</summary>
+          <p>Course fees, event registrations and donations go straight into your organisation's own payment account. VineStack never holds your money. Razorpay is supported today and Stripe is on the way, and we set up your payment provider with you during onboarding.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can we use our own domain and branding?</summary>
+          <p>Yes. On Plus and Pro your site runs on your own domain, with your colours, fonts, menu and homepage, all set from the admin console without code.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is our data kept separate and backed up?</summary>
+          <p>Yes. Every organisation's data is kept separate from every other organisation's, and the whole system is backed up automatically to private storage on a schedule.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does “Works with Claude” mean?</summary>
+          <p>On Pro, you can connect Claude to VineStack and run everyday work by asking: grade the next submission, approve sign-ups, check who still owes fees, draft and publish an article. Claude acts with your own permissions, every change is confirmed before it happens, and admins decide whether it is switched on.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it work on phones?</summary>
+          <p>Yes. Every page, from lessons and quizzes to the admin tools, is built to work on phones, tablets and desktops.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you help us move from our current tools?</summary>
+          <p>Yes. Onboarding and setup is available on every plan and is waived on annual Plus and Pro, and on Pro we migrate your data for you. Non-profits can ask about our discount.</p>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -441,6 +635,7 @@
         <a href="#who">Who it's for</a>
         <a href="#modules">Modules</a>
         <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
         <a href="#demo">Book a demo</a>
         <a href="https://cornerstone.vinestack.app" target="_blank" rel="noopener">Live demo</a>
         <a href="https://veritasprobe.com" target="_blank" rel="noopener">Veritas Probe</a>
@@ -449,7 +644,7 @@
     </div>
   </footer>
 
-  <script type="application/json" id="vs-prices">{"in": {"currency": "INR", "cur": "₹", "save": "save 10%", "plans": {"basic": {"monthly": "3,999", "annual": "3,599", "yearly": "43,188"}, "plus": {"monthly": "7,999", "annual": "7,199", "yearly": "86,388"}, "pro": {"monthly": "11,999", "annual": "10,799", "yearly": "1,29,588"}}, "k": {"plusValue": "₹6,497/mo", "payments": "₹2,499/mo", "content": "₹1,999/mo", "community": "₹1,999/mo", "onboarding": "₹9,999 once", "paymentsNote": "India live today · other countries by onboarding", "paymentsFoot": "ready for India today via Razorpay. Selling in another country? We'll onboard your local processor together."}}, "us": {"currency": "USD", "cur": "$", "save": "save 17%", "plans": {"basic": {"monthly": "69", "annual": "57", "yearly": "684"}, "plus": {"monthly": "149", "annual": "124", "yearly": "1,488"}, "pro": {"monthly": "299", "annual": "249", "yearly": "2,988"}}, "k": {"plusValue": "$97/mo", "payments": "$39/mo", "content": "$29/mo", "community": "$29/mo", "onboarding": "$299 once", "paymentsNote": "Your payment processor, set up with you during onboarding", "paymentsFoot": "live in India today. For US organisations, we set up your payment processor with you during onboarding."}}}</script>
+  <script type="application/json" id="vs-prices">{"in": {"currency": "INR", "cur": "₹", "save": "save 10%", "plans": {"basic": {"monthly": "3,999", "annual": "3,599", "yearly": "43,188"}, "plus": {"monthly": "7,999", "annual": "7,199", "yearly": "86,388"}, "pro": {"monthly": "11,999", "annual": "10,799", "yearly": "1,29,588"}}, "k": {"plusValue": "₹6,497/mo", "payments": "₹2,499/mo", "content": "₹1,999/mo", "community": "₹1,999/mo", "onboarding": "₹9,999 once", "paymentsNote": "Paid straight into your own account", "paymentsFoot": "fees and donations go straight into your organisation's own account. Razorpay is supported today and Stripe is on the way. We'll set up your payment provider with you during onboarding."}}, "us": {"currency": "USD", "cur": "$", "save": "save 17%", "plans": {"basic": {"monthly": "69", "annual": "57", "yearly": "684"}, "plus": {"monthly": "149", "annual": "124", "yearly": "1,488"}, "pro": {"monthly": "299", "annual": "249", "yearly": "2,988"}}, "k": {"plusValue": "$97/mo", "payments": "$39/mo", "content": "$29/mo", "community": "$29/mo", "onboarding": "$299 once", "paymentsNote": "Paid straight into your own account", "paymentsFoot": "fees and donations go straight into your organisation's own account. Razorpay is supported today and Stripe is on the way. We'll set up your payment provider with you during onboarding."}}}</script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     // Smooth-scroll for in-page anchors
