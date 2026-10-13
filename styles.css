@@ -706,22 +706,6 @@ h1, h2, h3 {
   font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
 }
 
-/* ---------- Trust ---------- */
-.trust { background: var(--ivory2); }
-.trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
-.trust-item {
-  position: relative; background: var(--white); border: 1px solid var(--line);
-  border-radius: var(--radius); padding: 1.5rem 1.4rem 1.45rem 3.3rem;
-}
-.trust-item::before {
-  content: "✓"; position: absolute; left: 1.3rem; top: 1.45rem;
-  width: 1.45rem; height: 1.45rem; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--vine); color: var(--gold-soft); font-size: 0.75rem; font-weight: 700;
-}
-.trust-item h3 { font-size: 1.08rem; color: var(--vine); margin-bottom: 0.4rem; }
-.trust-item p { margin: 0; font-size: 0.92rem; color: var(--ink-mut); }
-
 /* ---------- FAQ ---------- */
 .faq-inner { display: grid; grid-template-columns: 0.8fr 1.4fr; gap: 3rem; align-items: start; }
 .faq-more { color: var(--ink-mut); margin: 1rem 0 0; font-size: 0.95rem; }
@@ -763,7 +747,6 @@ h1, h2, h3 {
   .live-inner,
   .faq-inner,
   .demo-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .price-grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
   .pcard-featured { transform: none; }
   .strip-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -778,7 +761,6 @@ h1, h2, h3 {
   .compare-table { font-size: 0.8rem; }
   .compare-table th, .compare-table td { padding: 0.55rem 0.35rem; }
   .compare-table td { width: 19%; }
-  .trust-grid { grid-template-columns: 1fr; }
   .replaces-arrow { transform: rotate(90deg); width: 100%; }
   .replaces-old li { font-size: 0.82rem; padding: 0.4rem 0.75rem; }
   .faq-item p { padding-right: 0; }
