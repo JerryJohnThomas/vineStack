@@ -508,17 +508,6 @@ h1, h2, h3 {
 }
 .pcard-featured .price-annual-note { color: rgba(247, 243, 234, 0.7); }
 
-/* Value-stack callout on the featured plan */
-.plus-value {
-  margin: 0.2rem 0 1.3rem;
-  padding-top: 0.95rem;
-  border-top: 1px solid rgba(231, 207, 160, 0.3);
-  font-size: 0.88rem;
-  line-height: 1.4;
-  color: rgba(247, 243, 234, 0.9);
-}
-.plus-value .pv-strike { color: rgba(247, 243, 234, 0.5); text-decoration: line-through; }
-.plus-value strong { color: var(--gold-soft); font-weight: 700; }
 .pcard ul {
   list-style: none;
   padding: 0;
@@ -566,8 +555,6 @@ h1, h2, h3 {
   border-radius: 999px;
   white-space: nowrap;
 }
-.pcard li.muted { color: var(--ink-mut); font-size: 0.86rem; }
-.pcard-featured li.muted { color: rgba(247, 243, 234, 0.7); }
 
 /* Enterprise / custom catch-line */
 .price-enterprise {
@@ -577,47 +564,29 @@ h1, h2, h3 {
   color: var(--ink-mut);
 }
 
-/* Add-on modules */
-.addons {
+/* When to move up a plan */
+.pmove { margin: -0.6rem 0 1.4rem; font-size: 0.84rem; line-height: 1.45; color: var(--ink-mut); }
+.pmove strong { color: var(--vine); }
+.pcard-featured .pmove { color: rgba(247, 243, 234, 0.75); }
+.pcard-featured .pmove strong { color: var(--gold-soft); }
+
+/* Compare plans */
+.compare {
   margin-top: 2.6rem;
   background: var(--ivory2);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1.8rem;
 }
-.addons-head {
-  margin: 0 0 1.2rem;
-  font-family: 'Fraunces', serif;
-  font-size: 1.2rem;
-  color: var(--vine);
-}
-.addons-sub {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: var(--ink-mut);
-}
-.addon-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-.addon {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  padding: 1rem 1.1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-.addon-name { font-weight: 600; color: var(--vine); font-size: 0.95rem; }
-.addon-price {
-  font-family: 'Fraunces', serif;
-  font-size: 1.35rem;
-  color: var(--gold);
-}
-.addon-note { font-size: 0.78rem; color: var(--ink-mut); }
+.compare-head { margin: 0 0 1rem; font-family: 'Fraunces', serif; font-size: 1.2rem; color: var(--vine); }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; background: var(--white); border-radius: var(--radius-sm); overflow: hidden; }
+.compare-table th, .compare-table td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--line); }
+.compare-table tbody tr:last-child th, .compare-table tbody tr:last-child td { border-bottom: 0; }
+.compare-table thead th { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--vine); text-align: center; }
+.compare-table tbody th { text-align: left; font-weight: 500; color: var(--ink); }
+.compare-table td { text-align: center; width: 17%; color: var(--vine); font-weight: 600; }
+.compare-table td.no { color: var(--ink-mut); opacity: 0.45; font-weight: 400; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
 
 .price-foot {
   text-align: center;
@@ -790,7 +759,6 @@ h1, h2, h3 {
 @media (max-width: 900px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
   .aud-grid { grid-template-columns: repeat(2, 1fr); }
-  .addon-grid { grid-template-columns: repeat(2, 1fr); }
   .story-inner,
   .live-inner,
   .faq-inner,
@@ -806,7 +774,10 @@ h1, h2, h3 {
   .nav-links a:not(.btn-ghost) { display: none; }
   .grid { grid-template-columns: 1fr; }
   .aud-grid { grid-template-columns: 1fr; }
-  .addon-grid { grid-template-columns: 1fr; }
+  .compare { padding: 1rem 0.6rem; }
+  .compare-table { font-size: 0.8rem; }
+  .compare-table th, .compare-table td { padding: 0.55rem 0.35rem; }
+  .compare-table td { width: 19%; }
   .trust-grid { grid-template-columns: 1fr; }
   .replaces-arrow { transform: rotate(90deg); width: 100%; }
   .replaces-old li { font-size: 0.82rem; padding: 0.4rem 0.75rem; }
