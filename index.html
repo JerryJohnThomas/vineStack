@@ -496,11 +496,12 @@
         </table>
       </div>
 
-      <p class="price-foot">
-        <strong>Setup:</strong> <span data-k="onboarding">₹4,999 once</span>, free when you pay yearly.
-        <strong>Payments:</strong> <span data-k="paymentsFoot">fees and donations go straight into your organisation's own account. Razorpay is supported today and Stripe is on the way. We'll set up your payment provider with you during onboarding.</span>
-        <a href="#demo">Talk to us.</a> Non-profit? <a href="#demo">Ask about our discount.</a>
-      </p>
+      <div class="price-foot">
+        <p><strong>Setup:</strong> <span data-k="onboarding">₹4,999 once</span>, free when you pay yearly.</p>
+        <p><strong>Payments:</strong> <span data-k="paymentsFoot">fees and donations go straight into your organisation's own account. Razorpay is supported today and Stripe is on the way. We'll set up your payment provider with you during onboarding.</span></p>
+        <p class="price-foot__cta"><a href="#demo">Talk to us</a></p>
+        <p>Non-profit? <a href="#demo">Ask about our discount.</a></p>
+      </div>
     </div>
   </section>
 
@@ -562,12 +563,8 @@
         <p>See VineStack with your own organisation in mind. Tell us a little about what you run and we'll set up a walkthrough.</p>
       </div>
       <form class="demo-form" id="demo-form">
-        <!-- Web3Forms: paste your access key below -->
-        <input type="hidden" name="access_key" value="02f442bd-9383-4622-9229-47c809ecf983" />
-        <input type="hidden" name="subject" value="New VineStack demo request" />
-        <input type="hidden" name="from_name" value="VineStack website" />
-        <!-- honeypot (spam trap; leave hidden) -->
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+        <!-- Goes to VineStack (Platform console → Leads). Honeypot: people never see or fill it. -->
+        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <label>Name
           <input type="text" name="name" required placeholder="Your name" />
         </label>
@@ -576,6 +573,9 @@
         </label>
         <label>Organisation
           <input type="text" name="organisation" placeholder="Your organisation" />
+        </label>
+        <label>Phone or WhatsApp
+          <input type="tel" name="phone" placeholder="Optional, so we can reach you quickly" autocomplete="tel" />
         </label>
         <label>What are you hoping to run?
           <textarea name="message" rows="3" placeholder="Programs, community, payments…"></textarea>
@@ -647,6 +647,7 @@
       function setRegion(r) {
         if (!PRICES[r]) return;
         region = r;
+        document.documentElement.dataset.region = r; // the demo form sends it with a lead
         render();
       }
 
@@ -718,24 +719,29 @@
       status.style.color = '';
 
       try {
-        const res = await fetch('https://api.web3forms.com/submit', {
+        const data = Object.fromEntries(new FormData(form));
+        data.region = document.documentElement.dataset.region || ''; // which prices they saw
+        const res = await fetch('https://api.vinestack.app/api/leads', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+          body: JSON.stringify(data),
         });
-        const json = await res.json();
-        if (json.success) {
+        const json = await res.json().catch(() => ({}));
+        if (res.ok && json.ok) {
           form.reset();
           btn.textContent = 'Sent ✓';
           status.textContent = "Thanks! We'll be in touch shortly.";
           status.style.color = 'var(--vine)';
         } else {
-          throw new Error(json.message || 'Submission failed');
+          // 400 = something to fix in the form (e.g. the email); show it as-is.
+          const e = new Error(json.message || 'Submission failed');
+          e.show = res.status === 400 && typeof json.message === 'string';
+          throw e;
         }
       } catch (err) {
         btn.disabled = false;
         btn.textContent = original;
-        status.textContent = "Sorry, that didn't send. Please email us directly.";
+        status.textContent = err.show ? err.message : "Sorry, that didn't send. Please email us directly.";
         status.style.color = 'var(--danger, #c0392b)';
       }
     });
