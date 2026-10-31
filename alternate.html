@@ -163,6 +163,17 @@
 .b-tabs span { padding: 9px 18px; border-radius: 99px; font-size: 14px; font-weight: 600; color: var(--mut); }
 .b-tabs span.on { background: var(--vine); color: var(--ivory); }
 .b-stage { max-width: 1100px; margin: 0 auto; position: relative; text-align: left; }
+.b-layer { position: relative; max-width: 1120px; margin: 56px auto 0; height: 600px; text-align: left; }
+.b-back { position: absolute; left: 0; top: 0; width: 66%; }
+.b-front { position: absolute; right: 0; top: 96px; width: 60%; }
+.b-front .frame { box-shadow: 0 40px 90px -30px rgba(28,61,52,.55), 0 0 0 1px rgba(28,61,52,.08); }
+.b-tag { position: absolute; top: -14px; left: 22px; z-index: 2; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 6px 12px; border-radius: 99px; background: var(--vine); color: var(--ivory); }
+.b-tag--gold { background: var(--gold); color: var(--vine-dark); }
+@media (max-width: 900px) {
+  .b-layer { height: auto; display: grid; gap: 26px; margin-top: 36px; }
+  .b-back, .b-front { position: relative; width: 100%; top: 0; }
+  .b-front { order: -1; }
+}
 .b-stage .float { position: absolute; right: -40px; bottom: -40px; width: 330px; }
 .b-logos { padding: 90px 0 30px; text-align: center; font-size: 14px; color: var(--mut); }
 .b-logos div { display: flex; justify-content: center; gap: 46px; flex-wrap: wrap; margin-top: 16px; font: 500 22px var(--serif); color: var(--vine); opacity: .8; }
@@ -207,13 +218,10 @@
 <section class="b-hero"><div class="wrap">
   <span class="eyebrow">The Organisation OS</span><h1>Every part of your organisation, <em>in one place.</em></h1><p>Your website, courses, events, giving and members — one system, one login. Built for institutes and academies, and ready for any organisation that gathers people.</p>
   <div class="row" style="align-items:center;gap:22px"><a class="btn btn-vine" href="https://console.vinestack.app/start">Build your site</a><a href="https://cornerstone.vinestack.app" target="_blank" rel="noopener" style="font-weight:600;color:var(--vine);border-bottom:1.5px solid var(--gold)">See a live example →</a></div>
-  <div class="b-tabs"><span class="on">Insights</span><span>Programs</span><span>Website</span><span>Claude</span></div>
-  <div class="b-stage"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>cornerstone.vinestack.app/academy/admin/analytics</span></div><img src="/img/r-analytics.jpg" alt="" style="aspect-ratio:1440/600;object-fit:cover;object-position:top"></div><div class="float"><div class="chat">
-  <div class="msg me">Any pending sign-ups for the Faith &amp; Reason Conference?</div>
-  <div class="msg ai"><b>4 people</b> are waiting — Priya Nair, John Mathew, David Kim and Grace Thomas. Approve all 4?<div class="confirm"><span>Approve 4</span><span>Not now</span></div></div>
-  <div class="msg me">Approve. And what’s waiting to be graded?</div>
-  <div class="msg ai">Done — all 4 approved. <b>5 submissions</b> are waiting: 3 quizzes and 2 assignments in Foundations of Christian Belief.</div>
-</div></div></div>
+  <div class="b-layer">
+    <div class="b-back"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>cornerstone.vinestack.app/academy/admin/programs</span></div><img src="/img/r-programs.jpg" alt="" style="aspect-ratio:1440/820;object-fit:cover;object-position:top"></div><span class="b-tag">Your admin</span></div>
+    <div class="b-front"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>cornerstone.vinestack.app</span></div><img src="/img/site-cornerstone.jpg" alt="" style="aspect-ratio:1440/900;object-fit:cover;object-position:top"></div><span class="b-tag b-tag--gold">Your website</span></div>
+  </div>
 </div></section>
 <section class="b-logos"><div class="wrap">Running in production at<div><span>Veritas Probe Academy</span><span>Trivandrum Gospel Hall</span></div></div></section>
 <section class="sec" id="os"><div class="wrap">
@@ -228,6 +236,14 @@
   <div class="sec-head" style="margin:0"><span class="eyebrow">Start in minutes</span><h2>Your website first. <em>Everything else when you’re ready.</em></h2><p>Answer a few questions and see your site — with your name, colours and words — before you publish.</p>
     <div style="margin-top:26px"><a class="btn btn-vine" href="https://console.vinestack.app/start">Build your site</a></div></div></div></div>
   <div style="margin-top:60px"><div style="overflow:hidden;padding:10px 0 20px"><div class="strip"><div><div class="frame"><img src="/img/site-cornerstone.jpg" alt=""></div><div class="strip-cap">Cornerstone Academy</div></div><div><div class="frame"><img src="/img/site-veritas.jpg" alt=""></div><div class="strip-cap">Veritas Probe Academy</div></div><div><div class="frame"><img src="/img/site-groundwork.jpg" alt=""></div><div class="strip-cap">Groundwork template</div></div><div><div class="frame"><img src="/img/site-shopfront.jpg" alt=""></div><div class="strip-cap">Shopfront template</div></div><div><div class="frame"><img src="/img/site-billboard.jpg" alt=""></div><div class="strip-cap">Billboard template</div></div><div><div class="frame"><img src="/img/site-cornerstone.jpg" alt=""></div><div class="strip-cap">Cornerstone Academy</div></div><div><div class="frame"><img src="/img/site-veritas.jpg" alt=""></div><div class="strip-cap">Veritas Probe Academy</div></div><div><div class="frame"><img src="/img/site-groundwork.jpg" alt=""></div><div class="strip-cap">Groundwork template</div></div><div><div class="frame"><img src="/img/site-shopfront.jpg" alt=""></div><div class="strip-cap">Shopfront template</div></div><div><div class="frame"><img src="/img/site-billboard.jpg" alt=""></div><div class="strip-cap">Billboard template</div></div></div></div></div></section>
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="b-split">
+  <div class="sec-head" style="margin:0"><span class="eyebrow">Works with Claude</span><h2>Run it <em>by asking.</em></h2><p>Connect Claude and handle the everyday — sign-ups, grading, publishing — in plain words. Claude acts with your permissions, and every change is confirmed first.</p></div>
+  <div class="chat">
+  <div class="msg me">Any pending sign-ups for the Faith &amp; Reason Conference?</div>
+  <div class="msg ai"><b>4 people</b> are waiting — Priya Nair, John Mathew, David Kim and Grace Thomas. Approve all 4?<div class="confirm"><span>Approve 4</span><span>Not now</span></div></div>
+  <div class="msg me">Approve. And what’s waiting to be graded?</div>
+  <div class="msg ai">Done — all 4 approved. <b>5 submissions</b> are waiting: 3 quizzes and 2 assignments in Foundations of Christian Belief.</div>
+</div></div></div></section>
 <section class="sec" id="who"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Who it’s for</span><h2>Built for institutes. <em>Ready for everyone.</em></h2></div>
   <div class="b-who"><article><h3>Institutes &amp; academies</h3><p>Admissions, batches, courses, grading and fees — the full institute, one login.</p></article><article><h3>Churches &amp; ministries</h3><p>Your website, sermons and articles, events, giving and your people.</p></article><article><h3>Any organisation</h3><p>Studios, builders, bakeries, non-profits — a beautiful website first.</p></article></div></div></section>
 <section class="sec" id="plans" style="padding-top:0"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Pricing</span><h2>Pay for the stage <em>you’re at.</em></h2></div><div class="plans">

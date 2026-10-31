@@ -133,9 +133,6 @@ img { display: block; max-width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { .strip { animation: none; } }
 
-.a-proof > .wrap > span:first-child b { white-space: nowrap; }
-@media (min-width: 901px) { .a-proof > .wrap > span:first-child { white-space: nowrap; } }
-
 /* Phones: calmer type (laptop sizes unchanged). `html body` outranks each page's own styles. */
 @media (max-width: 600px) {
   html body { font-size: 15px; }
@@ -172,3 +169,6 @@ img { display: block; max-width: 100%; }
   html body .b-logos { padding: 44px 0 0; font-size: 13px; }
   html body .b-logos div { gap: 6px 20px; font-size: 17px; margin-top: 10px; }
 }
+
+.a-proof > .wrap > span:first-child b { white-space: nowrap; }
+@media (min-width: 901px) { .a-proof > .wrap > span:first-child { white-space: nowrap; } }
