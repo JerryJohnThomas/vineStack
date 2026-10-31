@@ -202,3 +202,17 @@ img { display: block; max-width: 100%; }
 
 .a-proof > .wrap > span:first-child b { white-space: nowrap; }
 @media (min-width: 901px) { .a-proof > .wrap > span:first-child { white-space: nowrap; } }
+
+/* Compare plans table (under the pricing cards) */
+.cmp { margin-top: 48px; }
+.cmp h3 { margin: 0 0 16px; text-align: center; font: 500 24px var(--serif); color: var(--vine); }
+.cmp-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+.cmp table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 560px; }
+.cmp th, .cmp td { padding: 12px 18px; text-align: center; border-bottom: 1px solid var(--line); }
+.cmp th:first-child, .cmp td:first-child { text-align: left; }
+.cmp thead th { font: 600 13px var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--mut); background: var(--ivory2); }
+.cmp thead th:nth-child(3) { color: var(--vine); }
+.cmp tbody tr:last-child td { border-bottom: 0; }
+.cmp td { color: var(--ink); }
+.cmp-note { margin: 12px 0 0; text-align: center; font-size: 13.5px; color: var(--mut); }
+@media (max-width: 600px) { .cmp th, .cmp td { padding: 10px 12px; font-size: 13.5px; } .cmp h3 { font-size: 21px; } }
