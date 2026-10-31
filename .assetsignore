@@ -7,3 +7,4 @@ readme.md
 .gitignore
 node_modules
 .wrangler
+_archive
