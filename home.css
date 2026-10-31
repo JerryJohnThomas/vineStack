@@ -166,8 +166,38 @@ img { display: block; max-width: 100%; }
   html body .final p { font-size: 15.5px; }
   html body .demo-form { padding: 20px; }
   html body .frame-bar span { font-size: 10.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  html body .b-logos { padding: 44px 0 0; font-size: 13px; }
-  html body .b-logos div { gap: 6px 20px; font-size: 17px; margin-top: 10px; }
+  html body .b-logos { padding: 40px 0 0; }
+  html body .b-logos p { font-size: 13.5px; }
+  html body .b-logos b { font-size: 16.5px; }
+}
+
+/* Laptops: calmer type (phones have their own sizes below 600px). `html body` outranks each page's own styles. */
+@media (min-width: 601px) {
+  html body .nav-links { font-size: 14.5px; gap: 26px; }
+  html body .btn { padding: 13px 22px; font-size: 14.5px; }
+  html body .btn-sm { padding: 9px 16px; font-size: 13.5px; }
+  html body .eyebrow { font-size: 12px; }
+  html body .a-hero h1 { font-size: clamp(38px, 3.9vw, 56px); line-height: 1.05; }
+  html body .b-hero h1 { font-size: clamp(40px, 4.6vw, 64px); line-height: 1.02; }
+  html body .a-hero p, html body .b-hero p { font-size: 17px; }
+  html body .a-note { font-size: 13px; }
+  html body .a-collage { height: 500px; }
+  html body .sec { padding: 92px 0; }
+  html body .sec-head h2 { font-size: clamp(30px, 3.2vw, 42px); }
+  html body .sec-head p { font-size: 16.5px; }
+  html body .a-mods b, html body .a-who h3, html body .b-who h3 { font-size: 18.5px; }
+  html body .a-mods p, html body .a-who p, html body .b-grid p, html body .b-who p { font-size: 14px; }
+  html body .a-facts span b { font-size: 21px; }
+  html body .b-list li { font-size: 15px; }
+  html body .chat { font-size: 14px; }
+  html body .plan h3 { font-size: 22px; }
+  html body .plan .price { font-size: 30px; }
+  html body .plan ul { font-size: 14px; }
+  html body .faq summary { font-size: 18px; }
+  html body .faq p { font-size: 15px; }
+  html body .final { padding: 64px 40px; }
+  html body .final h2 { font-size: clamp(30px, 3.4vw, 44px); }
+  html body .final p { font-size: 16.5px; }
 }
 
 .a-proof > .wrap > span:first-child b { white-space: nowrap; }
