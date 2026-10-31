@@ -14,8 +14,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary meta -->
-  <title>VineStack: The operating system for your organisation</title>
-  <meta name="description" content="VineStack is the operating system for academies, churches, non-profits and training organisations: courses and programs, quizzes and grading, events, content, community and payments in one system instead of six disconnected tools." />
+  <title>VineStack — every part of your organisation, in one place</title>
+  <meta name="description" content="The Organisation OS: your website, courses, events, giving and members in one system with one login. Built for institutes and academies, ready for any organisation that gathers people." />
   <meta name="keywords" content="organisation OS, all-in-one platform, LMS, learning management system, online courses, quizzes and grading, event registration, online giving, donations, member management, community platform, academy software, church software, ministry software, non-profit software, VineStack" />
   <meta name="author" content="VineStack" />
   <meta name="robots" content="index, follow" />
@@ -30,8 +30,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="VineStack" />
   <meta property="og:url" content="https://vinestack.app/" />
-  <meta property="og:title" content="VineStack: The operating system for your organisation" />
-  <meta property="og:description" content="Programs, people, assessments, content, community and payments in one unified system. Built for education first, ready for any organisation." />
+  <meta property="og:title" content="VineStack — every part of your organisation, in one place" />
+  <meta property="og:description" content="The Organisation OS: your website, courses, events, giving and members in one system with one login. Built for institutes and academies, ready for any organisation that gathers people." />
   <meta property="og:image" content="https://vinestack.app/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -40,8 +40,8 @@
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="VineStack: The operating system for your organisation" />
-  <meta name="twitter:description" content="Programs, people, assessments, content, community and payments in one unified system. Built for education first, ready for any organisation." />
+  <meta name="twitter:title" content="VineStack — every part of your organisation, in one place" />
+  <meta name="twitter:description" content="The Organisation OS: your website, courses, events, giving and members in one system with one login. Built for institutes and academies, ready for any organisation that gathers people." />
   <meta name="twitter:image" content="https://vinestack.app/og-image.png" />
 
   <!-- Structured data: helps Google show it as a software product -->
@@ -151,421 +151,122 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/home.css" />
+<style>
+.a-hero { padding: 70px 0 60px; }
+.a-hero .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
+.a-hero h1 { margin: 18px 0 0; font: 500 clamp(42px, 4.6vw, 66px)/1.04 var(--serif); color: var(--vine); letter-spacing: -0.02em; }
+.a-hero h1 em { color: var(--gold); }
+.a-hero p { margin: 22px 0 30px; font-size: 19px; color: var(--mut); max-width: 34em; }
+.a-hero .row { display: flex; gap: 12px; flex-wrap: wrap; }
+.a-note { margin-top: 18px; font-size: 14px; color: var(--mut); }
+.a-collage { position: relative; height: 560px; }
+.a-collage .ph { position: absolute; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(28,61,52,.5); }
+.a-collage .ph img { width: 100%; height: 100%; object-fit: cover; }
+.a-collage .p1 { inset: 0 18% 26% 0; }
+.a-collage .p2 { right: 0; bottom: 0; width: 56%; height: 52%; border: 6px solid var(--ivory); }
+.a-collage .card { position: absolute; left: -30px; bottom: 40px; background: var(--paper); border-radius: 18px; padding: 16px 18px; box-shadow: 0 20px 50px -20px rgba(28,61,52,.45); width: 250px; font-size: 13px; }
+.a-collage .card b { display: block; font: 500 17px var(--serif); color: var(--vine); margin-bottom: 6px; }
+.a-proof { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 26px 0; }
+.a-proof .wrap { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; font-size: 14px; color: var(--mut); }
+.a-proof b { font: 500 19px var(--serif); color: var(--vine); }
+.a-facts { display: flex; gap: 40px; flex-wrap: wrap; }
+.a-facts span b { display: block; font: 600 24px var(--sans); color: var(--ink); }
+.a-mods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; }
+.a-mods div { background: var(--paper); padding: 26px; }
+.a-mods b { display: block; font: 500 20px var(--serif); color: var(--vine); margin-bottom: 8px; }
+.a-mods p { margin: 0; font-size: 14.5px; color: var(--mut); }
+.a-who { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.a-who article { background: var(--paper); border-radius: 22px; overflow: hidden; border: 1px solid var(--line); }
+.a-who img { height: 220px; width: 100%; object-fit: cover; }
+.a-who div { padding: 22px; }
+.a-who h3 { margin: 0 0 8px; font: 500 24px var(--serif); color: var(--vine); }
+.a-who p { margin: 0; color: var(--mut); }
+.a-claude { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.a-shot { margin-top: -10px; }
+.a-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 22px; }
+.a-pair-cap { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 10px; font-size: 14px; color: var(--mut); text-align: center; }
+@media (max-width: 900px) { .a-pair, .a-pair-cap { grid-template-columns: 1fr; } .a-pair-cap { display: none; } }
+@media (max-width: 900px) {
+  .a-hero .wrap, .a-claude { grid-template-columns: 1fr; gap: 36px; }
+  .a-collage { height: 380px; }
+  .a-collage .card { left: 10px; bottom: 10px; width: 210px; }
+  .a-mods { grid-template-columns: 1fr 1fr; }
+  .a-who { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) { .a-mods { grid-template-columns: 1fr; } }
+
+/* Book a demo (form posts to VineStack Leads) */
+.demo-in { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; }
+.demo-form { background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: 28px; display: grid; gap: 14px; }
+.demo-form label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: var(--ink); }
+.demo-form input, .demo-form textarea { font: 400 15px var(--sans); padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: #fff; color: var(--ink); }
+.demo-form input:focus, .demo-form textarea:focus { outline: 2px solid var(--gold-soft); border-color: var(--gold); }
+.demo-form .btn { justify-self: start; }
+.form-note { margin: 0; font-size: 13px; color: var(--mut); }
+@media (max-width: 900px) { .demo-in { grid-template-columns: 1fr; gap: 28px; } }
+</style>
 </head>
 <body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29c0-6-4-9-9-11 5-1 9 1 9 6zM16 29c0-8 5-11 11-13-6-1-11 2-11 9z" fill="currentColor"/><path d="M16 29V7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/><circle cx="16" cy="5" r="3" fill="currentColor"/></svg>VineStack</a>
+  <nav class="nav-links"><a href="#os">Product</a><a href="#who">Who it’s for</a><a href="#sites">Websites</a><a href="#plans">Pricing</a><a href="#faq">FAQ</a></nav>
+  <div class="nav-right"><a href="https://console.vinestack.app/" style="font-weight:500;font-size:15px;margin-right:10px">Log in</a><a class="btn btn-sm btn-vine" href="https://console.vinestack.app/start">Build your site</a></div>
+</div></header>
 
-  <!-- ============ NAV ============ -->
-  <header class="nav" id="top">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="VineStack home">
-        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-          <path d="M16 29c0-6-4-9-9-11 5-1 9 1 9 6zM16 29c0-8 5-11 11-13-6-1-11 2-11 9z" fill="currentColor"/>
-          <path d="M16 29V7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-          <circle cx="16" cy="5" r="3" fill="currentColor"/>
-        </svg>
-        <span>VineStack</span>
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#who">Who it's for</a>
-        <a href="#modules">Modules</a>
-        <a href="#live">Live demo</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://console.vinestack.app/">Log in</a>
-        <a class="btn btn-ghost" href="#demo">Book a demo</a>
-        <a class="btn btn-primary" href="https://console.vinestack.app/start">Build your site</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="wrap hero-inner">
-      <p class="eyebrow">The OS for academies, churches &amp; training orgs</p>
-      <h1>Run your academy<br /><span class="accent">on one system.</span></h1>
-      <p class="lede">
-        Courses and programs, quizzes and grading, events, content, community
-        and payments — one system, not six scattered tools. For academies,
-        churches, non-profits and anyone who teaches, gathers or trains people.
-      </p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="https://console.vinestack.app/start">Build your site</a>
-        <a class="btn btn-outline" href="#demo">Book a demo</a>
-      </div>
-      <p class="hero-note hero-note--start">Answer a few questions and see your website, with your name on it, in minutes. Or <a href="#live">see a live example</a>.</p>
-      <p class="hero-note">Trusted in production by <a href="https://veritasprobe.com" target="_blank" rel="noopener">Veritas Probe Academy</a>.</p>
-    </div>
-    <div class="hero-glow" aria-hidden="true"></div>
-  </section>
-
-  <!-- ============ TRUST STRIP ============ -->
-  <section class="strip">
-    <div class="wrap strip-inner">
-      <div><strong>1</strong><span>system, not six</span></div>
-      <div><strong>Modular</strong><span>turn modules on as you grow</span></div>
-      <div><strong>Unified</strong><span>shared members, roles &amp; design</span></div>
-      <div><strong>Mobile</strong><span>works on every device</span></div>
-    </div>
-  </section>
-
-  <!-- ============ WHAT IT REPLACES ============ -->
-  <section class="replaces" aria-labelledby="replaces-title">
-    <div class="wrap replaces-inner">
-      <p class="section-kicker">What it replaces</p>
-      <h2 class="replaces-title" id="replaces-title">Six tools and a spreadsheet, <span class="accent">one login.</span></h2>
-      <div class="replaces-row">
-        <ul class="replaces-old" aria-label="Tools you no longer need">
-          <li>Course platform</li>
-          <li>Quiz &amp; grading tool</li>
-          <li>Event sign-up forms</li>
-          <li>Donation page</li>
-          <li>Blog</li>
-          <li>Member spreadsheet</li>
-        </ul>
-        <span class="replaces-arrow" aria-hidden="true">→</span>
-        <span class="replaces-new">
-          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-            <path d="M16 29c0-6-4-9-9-11 5-1 9 1 9 6zM16 29c0-8 5-11 11-13-6-1-11 2-11 9z" fill="currentColor"/>
-            <path d="M16 29V7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-            <circle cx="16" cy="5" r="3" fill="currentColor"/>
-          </svg>
-          VineStack
-        </span>
-      </div>
-      <p class="replaces-note">One member list, one design, one bill.</p>
-    </div>
-  </section>
-
-  <!-- ============ WHO IT'S FOR ============ -->
-  <section class="section" id="who">
-    <div class="wrap">
-      <p class="section-kicker">Who runs on VineStack</p>
-      <h2 class="section-title">Built for education, ready for any organisation</h2>
-      <p class="section-sub">
-        If you run programs, teach or train people, and want your community to
-        keep coming back, VineStack fits, whatever you call your organisation.
-      </p>
-      <div class="aud-grid">
-        <article class="aud">
-          <div class="aud-icon">🎓</div>
-          <h3>Academies &amp; training orgs</h3>
-          <p>Structured programs, graded assessments and real progress tracking for serious learning. Our home turf.</p>
-        </article>
-        <article class="aud">
-          <div class="aud-icon">🚀</div>
-          <h3>Coaches &amp; creators</h3>
-          <p>Sell cohorts, drip content and build a community that outlives a single course.</p>
-        </article>
-        <article class="aud">
-          <div class="aud-icon">🌍</div>
-          <h3>Non-profits &amp; communities</h3>
-          <p>Run programs, publish, gather your people and accept giving, all in one calm place.</p>
-        </article>
-        <article class="aud">
-          <div class="aud-icon">🕊️</div>
-          <h3>Faith organisations</h3>
-          <p>Discipleship courses, teaching journals and honest Q&amp;A, made with ministry in mind.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ MODULES ============ -->
-  <section class="section" id="modules">
-    <div class="wrap">
-      <p class="section-kicker">One system, every module</p>
-      <h2 class="section-title">Modules that share one backbone</h2>
-      <p class="section-sub">
-        Think of these as the apps that run on your VineStack. Switch on only
-        what you need today. Every module shares the same members, roles,
-        branding and design, so your organisation runs as one system, not six
-        disconnected tools.
-      </p>
-
-      <div class="grid">
-        <article class="mcard">
-          <div class="micon">📚</div>
-          <h3>Programs, Courses &amp; Enrollment</h3>
-          <p>Multi-week programs and events, standalone courses, lessons and faculty — with enrollment and role-based access for admins, faculty, TAs and members.</p>
-        </article>
-        <article class="mcard">
-          <div class="micon">✅</div>
-          <h3>Assessments &amp; Grading</h3>
-          <p>Quizzes and worksheets: MCQ, written answers and file-upload submissions, graded with feedback and colour-coded review at a glance.</p>
-        </article>
-        <article class="mcard">
-          <div class="micon">📈</div>
-          <h3>Progress Tracking</h3>
-          <p>Lesson completion, per-member progress and dashboards that surface who needs attention and recent results.</p>
-        </article>
-        <article class="mcard">
-          <div class="micon">✍️</div>
-          <h3>Content &amp; Blog</h3>
-          <p>Rich articles with sections, table of contents, video embeds and social-ready previews. Your voice, published.</p>
-        </article>
-        <article class="mcard">
-          <div class="micon">💬</div>
-          <h3>Q&amp;A Forums</h3>
-          <p>Threaded discussion with a gentle "ask as a member" mode, so people can ask honestly, with staff always in the loop.</p>
-        </article>
-        <article class="mcard">
-          <div class="micon">💳</div>
-          <h3>Payments, Giving &amp; Fundraising</h3>
-          <p>Course fees, event registrations and one-time or recurring giving, with fees and donations kept distinct. Money goes <strong>straight into your own account</strong> through the payment provider you use.</p>
-        </article>
-        <article class="mcard">
-          <div class="micon">👥</div>
-          <h3>People &amp; Roles</h3>
-          <p>Admins, faculty, TAs, editors and members, with clear permissions and one member directory across every module.</p>
-        </article>
-        <article class="mcard mcard-claude">
-          <div class="micon">✳️</div>
-          <h3>Works with Claude <span class="mtag">Pro</span></h3>
-          <p>Run your organisation by asking: grade the next submission, approve sign-ups, publish an article. Claude acts with your permissions and confirms every change first.</p>
-        </article>
-        <article class="mcard mcard-quiet">
-          <div class="micon">✨</div>
-          <h3>And the details</h3>
-          <p>Switch modules on as you grow, mobile-friendly by default, SEO-ready sharing, one unified dashboard, and a design language made to feel calm.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CASE STUDY ============ -->
-  <section class="section story" id="story">
-    <div class="wrap story-inner">
-      <div class="story-copy">
-        <p class="section-kicker">Case study</p>
-        <h2 class="section-title">An organisation that runs entirely on VineStack</h2>
-        <p>
-          Veritas Probe Academy runs end to end on VineStack: structured
-          programs, graded quizzes, a published journal of articles, and a
-          community Q&amp;A where members can ask hard questions. One team, one
-          system, from the first lesson to progress reports to payments.
-        </p>
-        <ul class="story-list">
-          <li>Programs, lessons and faculty in one catalog</li>
-          <li>Quizzes with instant graded review</li>
-          <li>A public journal with social-ready articles</li>
-          <li>Semi-private Q&amp;A for honest questions</li>
-        </ul>
-        <a class="btn btn-outline" href="https://veritasprobe.com" target="_blank" rel="noopener">Visit veritasprobe.com →</a>
-      </div>
-      <figure class="story-quote">
-        <blockquote>“VineStack made our whole process seamless, from onboarding and communication to payments, all in one flow. The assessments module has been especially wonderful for us.”</blockquote>
-        <figcaption><strong>Vineeth P M</strong> · Treasurer, Veritas Probe</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ============ LIVE DEMO ============ -->
-  <section class="section live" id="live">
-    <div class="wrap live-inner">
-      <div class="live-copy">
-        <p class="section-kicker">Live demo</p>
-        <h2 class="section-title">Click around a real VineStack site</h2>
-        <p>
-          Cornerstone Academy is a demo organisation running on VineStack today.
-          Same platform as our customers, with its own look: colours, fonts,
-          menu and homepage, all set from the admin console. No code.
-        </p>
-        <ul class="story-list">
-          <li>A custom homepage in the organisation's own style</li>
-          <li>Programs with sign-up, a journal of articles, and giving</li>
-          <li>One shared header, footer and design across every page</li>
-        </ul>
-        <a class="btn btn-primary" href="https://cornerstone.vinestack.app" target="_blank" rel="noopener">Explore Cornerstone Academy ↗</a>
-        <p class="live-note">A demo organisation: the people, programs and articles are sample content.</p>
-      </div>
-      <a class="live-frame" href="https://cornerstone.vinestack.app" target="_blank" rel="noopener" aria-label="Open the Cornerstone Academy demo site in a new tab">
-        <span class="live-bar" aria-hidden="true">
-          <i></i><i></i><i></i>
-          <span class="live-url">cornerstone.vinestack.app</span>
-        </span>
-        <span class="live-site" aria-hidden="true">
-          <span class="live-nav"><b>Cornerstone Academy</b><span>Programs · Journal · Give</span></span>
-          <span class="live-chip">Now enrolling · online &amp; in person</span>
-          <span class="live-h">Grounded in truth.<br />Growing in <em>grace.</em></span>
-          <span class="live-cards"><span></span><span></span><span></span></span>
-        </span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ============ PRICING ============ -->
-  <section class="section" id="pricing">
-    <div class="wrap">
-      <p class="section-kicker">Simple pricing</p>
-      <h2 class="section-title">Pay for the stage you're at.</h2>
-      <p class="section-sub">
-        Start with a great website. Move up when you start collecting money,
-        and again when you start teaching. Everything is included in a plan,
-        so there are no add-ons to work out.
-      </p>
-
-      <!-- Billing cycle toggle -->
-      <div class="billing-toggle" role="group" aria-label="Billing cycle">
-        <button type="button" class="bt-opt is-active" data-cycle="monthly">Monthly</button>
-        <button type="button" class="bt-opt" data-cycle="annual">Annual <span class="bt-save" data-k="save">2 months free</span></button>
-      </div>
-
-      <div class="price-grid">
-        <article class="pcard">
-          <h3>Basic</h3>
-          <p class="ptag">For any organisation that wants a great website: churches, non-profits, firms and studios</p>
-          <p class="price"><span class="cur" data-k="cur">₹</span><span class="price-amt" data-plan="basic">2,499</span><span class="per">/mo</span></p>
-          <p class="price-annual-note" data-plan="basic" hidden>₹24,990 billed yearly</p>
-          <ul>
-            <li><strong>Designed website on your own domain</strong></li>
-            <li>Blog &amp; articles, in more than one language</li>
-            <li>Website forms, like Plan your visit</li>
-            <li>Branded emails &amp; announcements</li>
-            <li>1 event or program at a time</li>
-            <li>Up to 100 members</li>
-          </ul>
-          <p class="pmove"><strong>Move to Plus</strong> when you want to take donations or fees online, or run more than one event.</p>
-          <a class="btn btn-primary block" href="https://console.vinestack.app/start">Build your site</a>
-        </article>
-
-        <article class="pcard pcard-featured">
-          <div class="pribbon">Most popular</div>
-          <h3>Plus</h3>
-          <p class="ptag">For organisations that collect money and run events</p>
-          <p class="price"><span class="cur" data-k="cur">₹</span><span class="price-amt" data-plan="plus">4,999</span><span class="per">/mo</span></p>
-          <p class="price-annual-note" data-plan="plus" hidden>₹49,990 billed yearly</p>
-          <ul>
-            <li>Everything in Basic</li>
-            <li><strong>Donations &amp; fees, paid into your own account</strong></li>
-            <li>Unlimited events &amp; programs</li>
-            <li>Community / Q&amp;A</li>
-            <li><strong>Works with Claude</strong> · approve, follow up &amp; publish just by asking</li>
-            <li>Up to 1,000 members</li>
-            <li>Priority support</li>
-          </ul>
-          <p class="pmove"><strong>Move to Pro</strong> when you want to run courses.</p>
-          <a class="btn btn-primary block" href="#demo">Book a demo</a>
-        </article>
-
-        <article class="pcard">
-          <h3>Pro</h3>
-          <p class="ptag">For organisations that teach: academies, Bible schools and training providers</p>
-          <p class="price"><span class="cur" data-k="cur">₹</span><span class="price-amt" data-plan="pro">9,999</span><span class="per">/mo</span></p>
-          <p class="price-annual-note" data-plan="pro" hidden>₹99,990 billed yearly</p>
-          <ul>
-            <li>Everything in Plus</li>
-            <li><strong>Courses, lessons &amp; progress tracking</strong></li>
-            <li>Quizzes, assignments &amp; grading</li>
-            <li>Private video hosting · fair-use allowance</li>
-            <li>Audio articles &amp; podcast feed</li>
-            <li>Unlimited members</li>
-            <li>Dedicated support · we migrate your data</li>
-          </ul>
-          <a class="btn btn-outline block" href="#demo">Talk to us</a>
-        </article>
-      </div>
-
-      <p class="price-enterprise">
-        Need SSO, API access, or data-residency for a larger org?
-        <a href="#demo">Let's talk about a custom plan.</a>
-      </p>
-
-      <!-- What's in each plan -->
-      <div class="compare">
-        <p class="compare-head">Compare plans</p>
-        <table class="compare-table">
-          <thead>
-            <tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col">Basic</th><th scope="col">Plus</th><th scope="col">Pro</th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Website, designed templates &amp; your own domain</th><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">About, legal &amp; other site pages</th><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">Blog &amp; articles, in more than one language</th><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">Website forms &amp; their responses</th><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">Branded emails &amp; announcements</th><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">Members &amp; roles</th><td>100</td><td>1,000</td><td>Unlimited</td></tr>
-            <tr><th scope="row">Events &amp; programs</th><td>1 at a time</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><th scope="row">Donations &amp; fees into your own account</th><td class="no">–</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">Community / Q&amp;A</th><td class="no">–</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">Works with Claude</th><td class="no">–</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">Courses, lessons &amp; progress tracking</th><td class="no">–</td><td class="no">–</td><td>✓</td></tr>
-            <tr><th scope="row">Quizzes, assignments &amp; grading</th><td class="no">–</td><td class="no">–</td><td>✓</td></tr>
-            <tr><th scope="row">Private video lessons</th><td class="no">–</td><td class="no">–</td><td>✓</td></tr>
-            <tr><th scope="row">Audio articles &amp; podcast</th><td class="no">–</td><td class="no">–</td><td>✓</td></tr>
-            <tr><th scope="row">Photo storage</th><td>5 GB</td><td>25 GB</td><td>100 GB</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="price-foot">
-        <p><strong>Setup:</strong> <span data-k="onboarding">₹4,999 once</span>, free when you pay yearly.</p>
-        <p><strong>Payments:</strong> <span data-k="paymentsFoot">fees and donations go straight into your organisation's own account. Razorpay is supported today and Stripe is on the way. We'll set up your payment provider with you during onboarding.</span></p>
-        <p class="price-foot__cta"><a href="#demo">Talk to us</a></p>
-        <p>Non-profit? <a href="#demo">Ask about our discount.</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section class="section faq" id="faq">
-    <div class="wrap faq-inner">
-      <div>
-        <p class="section-kicker">Questions</p>
-        <h2 class="section-title">Frequently asked</h2>
-        <p class="faq-more">Something else on your mind? <a href="#demo">Ask us directly.</a></p>
-      </div>
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>Who is VineStack for?<span class="faq-ic" aria-hidden="true"></span></summary>
-          <div class="faq-a"><p>Academies, churches and faith organisations, non-profits, coaches and training organisations: anyone who runs programs, teaches or trains people, and wants their community in one place. It is built for education first and works for any organisation that gathers and grows people.</p></div>
-        </details>
-        <details class="faq-item">
-          <summary>What does VineStack replace?<span class="faq-ic" aria-hidden="true"></span></summary>
-          <div class="faq-a"><p>Most organisations stitch together a course platform, a quiz or grading tool, event sign-up forms, a donation page, a blog and a member spreadsheet. VineStack does all of it in one system, with one member list, one login and one design.</p></div>
-        </details>
-        <details class="faq-item">
-          <summary>How do payments work, and which countries do you support?<span class="faq-ic" aria-hidden="true"></span></summary>
-          <div class="faq-a"><p>Course fees, event registrations and donations go straight into your organisation's own payment account. VineStack never holds your money. Razorpay is supported today and Stripe is on the way, and we set up your payment provider with you during onboarding.</p></div>
-        </details>
-        <details class="faq-item">
-          <summary>Can we use our own domain and branding?<span class="faq-ic" aria-hidden="true"></span></summary>
-          <div class="faq-a"><p>Yes. On every plan your site runs on your own domain, with your colours, fonts, menu and homepage, all set from the admin console without code.</p></div>
-        </details>
-        <details class="faq-item">
-          <summary>Is our data kept separate and backed up?<span class="faq-ic" aria-hidden="true"></span></summary>
-          <div class="faq-a"><p>Yes. Every organisation's data is kept separate from every other organisation's, and the whole system is backed up automatically to private storage on a schedule.</p></div>
-        </details>
-        <details class="faq-item">
-          <summary>Can we control who sees what?<span class="faq-ic" aria-hidden="true"></span></summary>
-          <div class="faq-a"><p>Yes. Admins, organisers, finance, faculty, TAs and members each see exactly what their role needs, and you decide who gets which role.</p></div>
-        </details>
-        <details class="faq-item">
-          <summary>What does “Works with Claude” mean?<span class="faq-ic" aria-hidden="true"></span></summary>
-          <div class="faq-a"><p>On Plus and Pro, you can connect Claude to VineStack and run everyday work by asking: grade the next submission, approve sign-ups, check who still owes fees, draft and publish an article. Claude acts with your own permissions, every change is confirmed before it happens, and admins decide whether it is switched on.</p></div>
-        </details>
-        <details class="faq-item">
-          <summary>Does it work on phones?<span class="faq-ic" aria-hidden="true"></span></summary>
-          <div class="faq-a"><p>Yes. Every page, from lessons and quizzes to the admin tools, is built to work on phones, tablets and desktops.</p></div>
-        </details>
-        <details class="faq-item">
-          <summary>Can you help us move from our current tools?<span class="faq-ic" aria-hidden="true"></span></summary>
-          <div class="faq-a"><p>Yes. Onboarding and setup is available on every plan and is waived on annual Plus and Pro, and on Pro we migrate your data for you. Non-profits can ask about our discount.</p></div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ DEMO / CONTACT ============ -->
-  <section class="section demo" id="demo">
-    <div class="wrap demo-inner">
-      <div class="demo-copy">
-        <p class="section-kicker">Let's talk</p>
-        <h2 class="section-title">Book a demo</h2>
-        <p>See VineStack with your own organisation in mind. Tell us a little about what you run and we'll set up a walkthrough.</p>
-      </div>
-      <form class="demo-form" id="demo-form">
+<section class="a-hero"><div class="wrap">
+  <div><span class="eyebrow">The Organisation OS</span><h1>Every part of your organisation, <em>in one place.</em></h1><p>Your website, courses, events, giving and members — one system, one login. Built for institutes and academies, and ready for any organisation that gathers people.</p>
+    <div class="row" style="align-items:center;gap:22px"><a class="btn btn-vine" href="https://console.vinestack.app/start">Build your site</a><a href="https://cornerstone.vinestack.app" target="_blank" rel="noopener" style="font-weight:600;color:var(--vine);border-bottom:1.5px solid var(--gold)">See a live example →</a></div>
+    <div class="a-note">See your site with your name on it in a few minutes. Free to build and preview.</div></div>
+  <div class="a-collage">
+    <div class="ph p1"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1100&q=75" alt=""></div>
+    <div class="ph p2"><img src="/img/site-cornerstone.jpg" alt=""></div>
+    <div class="card"><b>Faith &amp; Reason Conference</b>21 Nov · Cornerstone Centre · 250 seats<div style="margin-top:8px;font-weight:600;color:#2f7a4f">● Registration open</div></div>
+  </div>
+</div></section>
+<section class="a-proof"><div class="wrap"><span>Running in production at <b>Veritas Probe Academy</b> · <b>Trivandrum Gospel Hall</b></span>
+  <div class="a-facts"><span><b>1 login</b>instead of six tools</span><span><b>20+ designs</b>for your website</span><span><b>Direct</b>fees &amp; gifts go straight to you</span></div></div></section>
+<section class="sec" id="os"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">One system</span><h2>Everything your organisation runs on, <em>working together.</em></h2><p>One member list, one design, one login — so your website, your classes and your money finally talk to each other.</p></div>
+  <div class="a-mods"><div><b>Website &amp; blog</b><p>Designed templates, your own domain, articles in more than one language.</p></div><div><b>Courses &amp; grading</b><p>Lessons, quizzes, assignments, progress and feedback.</p></div><div><b>Programs &amp; events</b><p>Batches, camps and open days — with registration and capacity.</p></div><div><b>Fees &amp; giving</b><p>Into your own account, with receipts and recurring giving.</p></div><div><b>Members &amp; roles</b><p>Admins, faculty, organisers, finance — each sees what they need.</p></div><div><b>Forms &amp; enquiries</b><p>Contact and visit forms, answered in one inbox.</p></div><div><b>Emails &amp; newsletters</b><p>Branded announcements and new-article emails.</p></div><div><b>Works with Claude</b><p>Approve sign-ups, check grading, publish — by asking. Every change confirmed first.</p></div></div>
+  <div class="a-shot" style="margin-top:56px"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>cornerstone.vinestack.app/academy/admin/analytics</span></div><img src="/img/r-analytics.jpg" alt="" style="aspect-ratio:1440/600;object-fit:cover;object-position:top"></div></div>
+  <div class="a-pair"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>cornerstone.vinestack.app/academy/admin/programs</span></div><img src="/img/r-programs.jpg" alt="" style="aspect-ratio:1440/620;object-fit:cover;object-position:top"></div><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>cornerstone.vinestack.app/academy/admin/website</span></div><img src="/img/r-website.jpg" alt="" style="aspect-ratio:1440/620;object-fit:cover;object-position:top"></div></div>
+  <div class="a-pair-cap"><span>Programs &amp; events, with registration and capacity</span><span>Your website — edit every word, see it live</span></div>
+</div></section>
+<section class="sec" id="who" style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Who it’s for</span><h2>Built for institutes. <em>Ready for everyone.</em></h2></div>
+  <div class="a-who"><article><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=75" alt=""><div><h3>Institutes &amp; academies</h3><p>Admissions, batches, courses, grading and fees — the full institute, one login.</p></div></article><article><img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=900&q=75" alt=""><div><h3>Churches &amp; ministries</h3><p>Your website, sermons and articles, events, giving and your people.</p></div></article><article><img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=75" alt=""><div><h3>Any organisation</h3><p>Studios, builders, bakeries, non-profits — a beautiful website first.</p></div></article></div>
+</div></section>
+<section class="sec" id="sites" style="background:var(--ivory2)"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Your website</span><h2>A website you’ll be <em>proud to share.</em></h2><p>Pick a design, add your words and colours, publish. Change anything later from your own admin.</p></div></div><div style="overflow:hidden;padding:10px 0 20px"><div class="strip"><div><div class="frame"><img src="/img/site-cornerstone.jpg" alt=""></div><div class="strip-cap">Cornerstone Academy</div></div><div><div class="frame"><img src="/img/site-veritas.jpg" alt=""></div><div class="strip-cap">Veritas Probe Academy</div></div><div><div class="frame"><img src="/img/site-groundwork.jpg" alt=""></div><div class="strip-cap">Groundwork template</div></div><div><div class="frame"><img src="/img/site-shopfront.jpg" alt=""></div><div class="strip-cap">Shopfront template</div></div><div><div class="frame"><img src="/img/site-billboard.jpg" alt=""></div><div class="strip-cap">Billboard template</div></div><div><div class="frame"><img src="/img/site-cornerstone.jpg" alt=""></div><div class="strip-cap">Cornerstone Academy</div></div><div><div class="frame"><img src="/img/site-veritas.jpg" alt=""></div><div class="strip-cap">Veritas Probe Academy</div></div><div><div class="frame"><img src="/img/site-groundwork.jpg" alt=""></div><div class="strip-cap">Groundwork template</div></div><div><div class="frame"><img src="/img/site-shopfront.jpg" alt=""></div><div class="strip-cap">Shopfront template</div></div><div><div class="frame"><img src="/img/site-billboard.jpg" alt=""></div><div class="strip-cap">Billboard template</div></div></div></div>
+  <div style="text-align:center;margin-top:20px"><a class="btn btn-vine" href="https://console.vinestack.app/start">Build your site — it takes minutes</a></div></section>
+<section class="sec"><div class="wrap a-claude">
+  <div class="sec-head" style="margin:0"><span class="eyebrow">Works with Claude</span><h2>Run it <em>by asking.</em></h2><p>Connect Claude and handle the everyday — fees, sign-ups, grading, publishing — in plain words. Claude acts with your permissions, and every change is confirmed first.</p></div>
+  <div class="chat">
+  <div class="msg me">Any pending sign-ups for the Faith &amp; Reason Conference?</div>
+  <div class="msg ai"><b>4 people</b> are waiting — Priya Nair, John Mathew, David Kim and Grace Thomas. Approve all 4?<div class="confirm"><span>Approve 4</span><span>Not now</span></div></div>
+  <div class="msg me">Approve. And what’s waiting to be graded?</div>
+  <div class="msg ai">Done — all 4 approved. <b>5 submissions</b> are waiting: 3 quizzes and 2 assignments in Foundations of Christian Belief.</div>
+</div></div></section>
+<section class="sec" id="plans" style="padding-top:0"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Pricing</span><h2>Pay for the stage <em>you’re at.</em></h2><p>Start with a website. Move up when you collect money, and again when you teach.</p></div><div class="plans">
+  <div class="plan"><span class="stage">Start with your website</span><h3>Basic</h3><div class="price"><span data-k="cur">₹</span><span class="price-amt" data-plan="basic">2,499</span><small> /month</small></div>
+    <ul><li>A designed website on your own domain</li><li>Blog &amp; articles, in more than one language</li><li>Forms &amp; enquiries</li><li>1 event or program at a time</li><li>Up to 100 members</li></ul><a class="btn btn-line" href="https://console.vinestack.app/start">Build your site</a></div>
+  <div class="plan feat"><span class="stage">Collect money &amp; run events</span><h3>Plus</h3><div class="price"><span data-k="cur">₹</span><span class="price-amt" data-plan="plus">4,999</span><small> /month</small></div>
+    <ul><li>Everything in Basic</li><li>Fees &amp; donations into your own account</li><li>Unlimited events &amp; programs</li><li>Community Q&amp;A</li><li>Works with Claude</li><li>Up to 1,000 members</li></ul><a class="btn btn-gold" href="#demo">Talk to us</a></div>
+  <div class="plan"><span class="stage">The full institute</span><h3>Pro</h3><div class="price"><span data-k="cur">₹</span><span class="price-amt" data-plan="pro">9,999</span><small> /month</small></div>
+    <ul><li>Everything in Plus</li><li>Courses, lessons &amp; progress</li><li>Quizzes, assignments &amp; grading</li><li>Private video &amp; podcasts</li><li>Unlimited members · we move your data</li></ul><a class="btn btn-line" href="#demo">Talk to us</a></div>
+</div></div></section>
+<section class="sec" id="faq" style="padding-top:0"><div class="wrap"><div class="sec-head center"><h2>Questions</h2></div><div class="faq">
+  <details open><summary>Who is VineStack for?</summary><p>Institutes, academies and Bible schools first — and any organisation that gathers people: churches, non-profits, training providers and small businesses. Start with a website; add the rest when you need it.</p></details>
+  <details><summary>Does the money go through VineStack?</summary><p>No. Fees and donations go straight into your organisation’s own Razorpay or Stripe account. VineStack never holds your money.</p></details>
+  <details><summary>Can we use our own domain and branding?</summary><p>Yes, on every plan — your domain, your colours, your logo and your words, all changed from your own admin.</p></details>
+  <details><summary>What does “works with Claude” mean?</summary><p>Connect Claude and run everyday work by asking — check who owes fees, approve sign-ups, grade the next submission, publish an article. Every change is confirmed before it happens.</p></details>
+  <details><summary>Can you move us from our current tools?</summary><p>Yes. Setup is included on yearly plans, and on Pro we migrate your data for you.</p></details>
+</div></div></section>
+<section class="sec demo" id="demo"><div class="wrap demo-in">
+  <div class="sec-head" style="margin:0"><span class="eyebrow">Let’s talk</span><h2>Book a <em>demo.</em></h2>
+    <p>Running an institute, or moving from other tools? Tell us a little about what you run and we’ll set up a walkthrough — and help move your data over.</p></div>
+  <form class="demo-form" id="demo-form">
         <!-- Goes to VineStack (Platform console → Leads). Honeypot: people never see or fill it. -->
         <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <label>Name
@@ -583,139 +284,33 @@
         <label>What are you hoping to run?
           <textarea name="message" rows="3" placeholder="Programs, community, payments…"></textarea>
         </label>
-        <button class="btn btn-primary block" type="submit">Request a demo</button>
+        <button class="btn btn-vine" type="submit">Request a demo</button>
         <p class="form-note" id="form-status">No spam. We'll only use this to reply to you.</p>
       </form>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    <div class="wrap footer-inner">
-      <div class="brand brand-footer">
-        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-          <path d="M16 29c0-6-4-9-9-11 5-1 9 1 9 6zM16 29c0-8 5-11 11-13-6-1-11 2-11 9z" fill="currentColor"/>
-          <path d="M16 29V7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-          <circle cx="16" cy="5" r="3" fill="currentColor"/>
-        </svg>
-        <span>VineStack</span>
-      </div>
-      <p class="footer-tag">The operating system for your organisation.</p>
-      <nav class="footer-links" aria-label="Footer">
-        <a href="#who">Who it's for</a>
-        <a href="#modules">Modules</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a href="#demo">Book a demo</a>
-        <a href="https://console.vinestack.app/start">Build your site</a>
-        <a href="https://console.vinestack.app/">Log in</a>
-        <a href="https://cornerstone.vinestack.app" target="_blank" rel="noopener">Live demo</a>
-        <a href="https://veritasprobe.com" target="_blank" rel="noopener">Veritas Probe</a>
-      </nav>
-      <nav class="footer-legal" aria-label="Legal">
-        <a href="/terms">Terms of service</a>
-        <a href="/privacy">Privacy policy</a>
-        <a href="/refund-policy">Refund policy</a>
-      </nav>
-      <p class="copyright">© <span id="year"></span> VineStack. Built for education, ready for any organisation.</p>
-    </div>
-  </footer>
-
-  <script type="application/json" id="vs-prices">{"in": {"currency": "INR", "cur": "₹", "save": "2 months free", "plans": {"basic": {"monthly": "2,499", "annual": "2,083", "yearly": "24,990"}, "plus": {"monthly": "4,999", "annual": "4,166", "yearly": "49,990"}, "pro": {"monthly": "9,999", "annual": "8,333", "yearly": "99,990"}}, "k": {"onboarding": "₹4,999 once", "paymentsFoot": "fees and donations go straight into your organisation's own account. Razorpay is supported today and Stripe is on the way. We'll set up your payment provider with you during onboarding."}}, "us": {"currency": "USD", "cur": "$", "save": "2 months free", "plans": {"basic": {"monthly": "39", "annual": "33", "yearly": "390"}, "plus": {"monthly": "89", "annual": "74", "yearly": "890"}, "pro": {"monthly": "199", "annual": "166", "yearly": "1,990"}}, "k": {"onboarding": "$149 once", "paymentsFoot": "fees and donations go straight into your organisation's own account. Razorpay is supported today and Stripe is on the way. We'll set up your payment provider with you during onboarding."}}}</script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Smooth-scroll for in-page anchors
-    document.querySelectorAll('a[href^="#"]').forEach((a) => {
-      a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href');
-        if (id.length > 1) {
-          const el = document.querySelector(id);
-          if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-        }
-      });
-    });
-
-    // Pricing: price list x billing cycle. The list comes from #vs-prices.
-    (function () {
-      const PRICES = JSON.parse(document.getElementById('vs-prices').textContent);
-      const opts = document.querySelectorAll('.bt-opt');
-      let region = 'in';
-      let cycle = 'monthly';
-
-      function render() {
-        const P = PRICES[region];
-        document.querySelectorAll('.price-amt').forEach((el) => { el.textContent = P.plans[el.dataset.plan][cycle]; });
-        document.querySelectorAll('.price-annual-note').forEach((el) => {
-          el.textContent = P.cur + P.plans[el.dataset.plan].yearly + ' billed yearly';
-          el.hidden = cycle !== 'annual';
-        });
-        document.querySelectorAll('[data-k]').forEach((el) => {
-          const key = el.dataset.k;
-          el.textContent = key === 'cur' ? P.cur : key === 'save' ? P.save : P.k[key];
-        });
-      }
-      function setRegion(r) {
-        if (!PRICES[r]) return;
-        region = r;
-        document.documentElement.dataset.region = r; // the demo form sends it with a lead
-        render();
-      }
-
-      opts.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          cycle = btn.dataset.cycle;
-          opts.forEach((b) => b.classList.toggle('is-active', b === btn));
-          render();
-        });
-      });
-
-      const served = Object.keys(PRICES);
-      if (served.length === 1) { setRegion(served[0]); return; }
-
-      // No edge worker (local preview): pick the list in the browser.
-      const fromUrl = (new URLSearchParams(location.search).get('region') || '').toLowerCase();
-      if (PRICES[fromUrl]) { setRegion(fromUrl); return; }
-
-      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-      setRegion(/^Asia\/(Kolkata|Calcutta)$/.test(tz) ? 'in' : 'us');
-      fetch('/cdn-cgi/trace', { cache: 'no-store' })
-        .then((res) => (res.ok ? res.text() : ''))
-        .then((t) => {
-          const loc = (t.match(/^loc=([A-Z]{2})$/m) || [])[1];
-          if (loc) setRegion(loc === 'IN' ? 'in' : 'us');
-        })
-        .catch(() => {});
-    })();
-
-    // FAQ: smooth open/close (native <details> snaps). Height is animated with
-    // the Web Animations API; reduced-motion users get the instant toggle.
-    document.querySelectorAll('.faq-item').forEach((item) => {
-      const summary = item.querySelector('summary');
-      const body = item.querySelector('.faq-a');
-      summary.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (item.dataset.busy) return;
-        const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches || !body.animate;
-        if (!item.open) {
-          item.open = true;
-          if (still) return;
-          item.dataset.busy = '1';
-          body.animate(
-            [{ height: '0px', opacity: 0 }, { height: body.scrollHeight + 'px', opacity: 1 }],
-            { duration: 280, easing: 'cubic-bezier(.2,.7,.2,1)' },
-          ).onfinish = () => { delete item.dataset.busy; };
-        } else {
-          if (still) { item.open = false; return; }
-          item.dataset.busy = '1';
-          item.classList.add('is-closing');
-          body.animate(
-            [{ height: body.offsetHeight + 'px', opacity: 1 }, { height: '0px', opacity: 0 }],
-            { duration: 220, easing: 'cubic-bezier(.4,0,.6,1)' },
-          ).onfinish = () => { item.open = false; item.classList.remove('is-closing'); delete item.dataset.busy; };
-        }
-      });
-    });
-
+</div></section>
+<div class="wrap" style="padding-bottom:30px"><div class="final"><h2>Bring every part of your organisation <em>home.</em></h2>
+  <p>Build your website in a few minutes and see it with your name on it. Add courses, events and giving whenever you’re ready.</p>
+  <div class="row"><a class="btn btn-gold" href="https://console.vinestack.app/start">Build your site</a><a class="btn btn-line" href="#demo">Book a demo</a></div>
+  <p style="margin:18px auto 0;font-size:15px">Running an institute? We’ll walk you through it — and move your data over.</p></div></div>
+<footer class="foot"><div class="wrap"><span>© 2026 VineStack · The Organisation OS</span><nav><a href="#plans">Pricing</a><a href="#demo">Book a demo</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/refund-policy">Refund policy</a><a href="https://console.vinestack.app/">Log in</a></nav></div></footer>
+<script type="application/json" id="vs-prices">{"in": {"currency": "INR", "cur": "₹", "save": "2 months free", "plans": {"basic": {"monthly": "2,499", "annual": "2,083", "yearly": "24,990"}, "plus": {"monthly": "4,999", "annual": "4,166", "yearly": "49,990"}, "pro": {"monthly": "9,999", "annual": "8,333", "yearly": "99,990"}}, "k": {"onboarding": "₹4,999 once", "paymentsFoot": "fees and donations go straight into your organisation's own account. Razorpay is supported today and Stripe is on the way. We'll set up your payment provider with you during onboarding."}}, "us": {"currency": "USD", "cur": "$", "save": "2 months free", "plans": {"basic": {"monthly": "39", "annual": "33", "yearly": "390"}, "plus": {"monthly": "89", "annual": "74", "yearly": "890"}, "pro": {"monthly": "199", "annual": "166", "yearly": "1,990"}}, "k": {"onboarding": "$149 once", "paymentsFoot": "fees and donations go straight into your organisation's own account. Razorpay is supported today and Stripe is on the way. We'll set up your payment provider with you during onboarding."}}}</script>
+<script>
+  // Region prices: the edge worker fills them in; locally, pick by time zone / ?region=.
+  (function () {
+    const PRICES = JSON.parse(document.getElementById('vs-prices').textContent);
+    function setRegion(r) {
+      const P = PRICES[r]; if (!P) return;
+      document.documentElement.dataset.region = r;
+      document.querySelectorAll('.price-amt').forEach((el) => { el.textContent = P.plans[el.dataset.plan].monthly; });
+      document.querySelectorAll('[data-k="cur"]').forEach((el) => { el.textContent = P.cur; });
+    }
+    const served = Object.keys(PRICES);
+    if (served.length === 1) { setRegion(served[0]); return; }
+    const q = (new URLSearchParams(location.search).get('region') || '').toLowerCase();
+    if (PRICES[q]) { setRegion(q); return; }
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    setRegion(/^Asia\/(Kolkata|Calcutta)$/.test(tz) ? 'in' : 'us');
+  })();
     document.getElementById('demo-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       const form = e.currentTarget;
@@ -755,6 +350,6 @@
         status.style.color = 'var(--danger, #c0392b)';
       }
     });
-  </script>
+</script>
 </body>
 </html>
