@@ -356,5 +356,36 @@
       }
     });
 </script>
+<script>
+/* Questions: open and close smoothly (height + fade) instead of snapping. */
+(function () {
+  if (!window.Element || !Element.prototype.animate) return;
+  var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.faq details').forEach(function (d) {
+    var s = d.querySelector('summary'), body = d.querySelector('p'), anim = null;
+    s.addEventListener('click', function (e) {
+      if (calm) return;
+      e.preventDefault();
+      var opening = !d.open || d.classList.contains('closing');
+      var from = d.offsetHeight;
+      if (anim) anim.cancel();
+      d.classList.remove('closing');
+      d.open = true;
+      var full = d.offsetHeight;
+      d.open = false;
+      var shut = d.offsetHeight;
+      d.open = true;
+      if (!opening) d.classList.add('closing');
+      d.style.overflow = 'hidden';
+      anim = d.animate({ height: [from + 'px', (opening ? full : shut) + 'px'] }, { duration: 320, easing: 'cubic-bezier(.2,.7,.2,1)' });
+      body.animate({ opacity: opening ? [0, 1] : [1, 0], transform: opening ? ['translateY(-4px)', 'none'] : ['none', 'translateY(-4px)'] }, { duration: opening ? 320 : 200, easing: 'ease', fill: 'none' });
+      anim.onfinish = function () {
+        if (!opening) d.open = false;
+        d.classList.remove('closing'); d.style.overflow = ''; anim = null;
+      };
+    });
+  });
+})();
+</script>
 </body>
 </html>
