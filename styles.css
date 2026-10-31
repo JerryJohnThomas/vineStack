@@ -131,6 +131,7 @@ h1, h2, h3 {
 .nav-links { display: flex; align-items: center; gap: 1.6rem; }
 .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--ink); }
 .nav-links a:hover { color: var(--gold); }
+.nav-links a.btn-primary, .nav-links a.btn-primary:hover { color: var(--ivory); }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -669,6 +670,9 @@ h1, h2, h3 {
 .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.4rem; }
 .footer-links a { color: rgba(247, 243, 234, 0.8); font-size: 0.92rem; }
 .footer-links a:hover { color: var(--gold); }
+.footer-legal { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
+.footer-legal a { color: rgba(247, 243, 234, 0.6); font-size: 0.85rem; }
+.footer-legal a:hover { color: var(--gold); }
 .copyright { margin: 0.6rem 0 0; font-size: 0.82rem; color: rgba(247, 243, 234, 0.55); }
 
 /* ---------- What it replaces ---------- */
@@ -756,7 +760,7 @@ h1, h2, h3 {
 
 @media (max-width: 620px) {
   .nav-links { gap: 0.9rem; }
-  .nav-links a:not(.btn-ghost) { display: none; }
+  .nav-links a:not(.btn), .nav-links .btn-ghost { display: none; }
   .grid { grid-template-columns: 1fr; }
   .aud-grid { grid-template-columns: 1fr; }
   .compare { padding: 1rem 0.6rem; }
@@ -791,3 +795,14 @@ h1, h2, h3 {
     padding-block: 3.25rem;
   }
 }
+
+/* ---------- Legal pages (terms.html, privacy.html, refund-policy.html) ---------- */
+.legal { padding-block: clamp(2.5rem, 6vw, 4rem) clamp(3rem, 7vw, 5rem); }
+.legal .wrap { max-width: 760px; }
+.legal h1 { font-family: 'Fraunces', Georgia, serif; color: var(--vine); font-size: clamp(2rem, 4.5vw, 2.8rem); line-height: 1.1; margin: 0 0 0.4rem; }
+.legal .updated { color: var(--ink-mut); font-size: 0.9rem; margin: 0 0 2rem; }
+.legal h2 { color: var(--vine); font-size: 1.2rem; margin: 2.2rem 0 0.6rem; }
+.legal p, .legal li { line-height: 1.7; color: var(--ink); }
+.legal ul { padding-left: 1.2rem; }
+.legal li { margin: 0.3rem 0; }
+.legal .summary { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.3rem; }
