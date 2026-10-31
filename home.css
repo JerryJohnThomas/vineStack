@@ -135,3 +135,40 @@ img { display: block; max-width: 100%; }
 
 .a-proof > .wrap > span:first-child b { white-space: nowrap; }
 @media (min-width: 901px) { .a-proof > .wrap > span:first-child { white-space: nowrap; } }
+
+/* Phones: calmer type (laptop sizes unchanged). `html body` outranks each page's own styles. */
+@media (max-width: 600px) {
+  html body { font-size: 15px; }
+  html body .nav .wrap { height: 60px; }
+  html body .brand { font-size: 18px; }
+  html body .nav-right > a:first-child { font-size: 14px !important; margin-right: 4px !important; }
+  html body .nav-right .btn-sm { padding: 8px 14px; font-size: 13.5px; }
+  html body .eyebrow { font-size: 11px; letter-spacing: 0.12em; }
+  html body .a-hero, html body .b-hero { padding-top: 44px; }
+  html body .a-hero h1, html body .b-hero h1, html body .d-hero h1 { font-size: 36px; line-height: 1.06; letter-spacing: -0.015em; }
+  html body .a-hero p, html body .b-hero p, html body .d-hero p { font-size: 16px; line-height: 1.55; margin: 16px auto 24px; }
+  html body .a-hero p { margin-left: 0; }
+  html body .btn { padding: 12px 20px; font-size: 14.5px; }
+  html body .a-note { font-size: 13px; }
+  html body .b-tabs { margin-top: 36px; }
+  html body .b-tabs span { padding: 7px 12px; font-size: 13px; }
+  html body .sec { padding: 60px 0; }
+  html body .sec-head { margin-bottom: 32px; }
+  html body .sec-head h2 { font-size: 29px; line-height: 1.1; }
+  html body .sec-head p { font-size: 15.5px; }
+  html body .a-mods b, html body .b-who h3, html body .a-who h3, html body .plan h3 { font-size: 19px; }
+  html body .a-mods p, html body .b-grid p, html body .a-who p, html body .b-who p { font-size: 14px; }
+  html body .a-facts span b { font-size: 19px; }
+  html body .chat { font-size: 13.5px; padding: 16px; }
+  html body .plan { padding: 22px; }
+  html body .plan .price { font-size: 28px; }
+  html body .plan ul { font-size: 14px; }
+  html body .faq summary { font-size: 17px; }
+  html body .faq p { font-size: 14.5px; }
+  html body .final h2 { font-size: 30px; }
+  html body .final p { font-size: 15.5px; }
+  html body .demo-form { padding: 20px; }
+  html body .frame-bar span { font-size: 10.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  html body .b-logos { padding: 44px 0 0; font-size: 13px; }
+  html body .b-logos div { gap: 6px 20px; font-size: 17px; margin-top: 10px; }
+}
