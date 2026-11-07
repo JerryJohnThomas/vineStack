@@ -15,7 +15,7 @@
 
   <!-- Primary meta -->
   <title>VineStack — every part of your organisation, in one place</title>
-  <meta name="description" content="The Organisation OS: your website, courses, events, giving and members in one system with one login. Built for institutes and academies, ready for any organisation that gathers people." />
+  <meta name="description" content="The Organisation OS: your website, courses, events, giving, invoices and members in one system with one login. Built for institutes and academies, ready for any organisation that gathers people." />
   <meta name="keywords" content="organisation OS, all-in-one platform, LMS, learning management system, online courses, quizzes and grading, event registration, online giving, donations, member management, community platform, academy software, church software, ministry software, non-profit software, VineStack" />
   <meta name="author" content="VineStack" />
   <meta name="robots" content="index, follow" />
@@ -31,7 +31,7 @@
   <meta property="og:site_name" content="VineStack" />
   <meta property="og:url" content="https://vinestack.app/" />
   <meta property="og:title" content="VineStack — every part of your organisation, in one place" />
-  <meta property="og:description" content="The Organisation OS: your website, courses, events, giving and members in one system with one login. Built for institutes and academies, ready for any organisation that gathers people." />
+  <meta property="og:description" content="The Organisation OS: your website, courses, events, giving, invoices and members in one system with one login. Built for institutes and academies, ready for any organisation that gathers people." />
   <meta property="og:image" content="https://vinestack.app/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -41,7 +41,7 @@
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="VineStack — every part of your organisation, in one place" />
-  <meta name="twitter:description" content="The Organisation OS: your website, courses, events, giving and members in one system with one login. Built for institutes and academies, ready for any organisation that gathers people." />
+  <meta name="twitter:description" content="The Organisation OS: your website, courses, events, giving, invoices and members in one system with one login. Built for institutes and academies, ready for any organisation that gathers people." />
   <meta name="twitter:image" content="https://vinestack.app/og-image.png" />
 
   <!-- Structured data: helps Google show it as a software product -->
@@ -157,18 +157,22 @@
 .b-hero { padding: 90px 0 0; text-align: center; background: radial-gradient(900px 420px at 50% 0%, rgba(198,155,83,.18), transparent 70%); }
 .b-hero h1 { margin: 18px auto 0; max-width: 15ch; font: 500 clamp(46px, 6vw, 84px)/1 var(--serif); color: var(--vine); letter-spacing: -0.025em; }
 .b-hero h1 em { color: var(--gold); }
-.b-hero p { margin: 22px auto 30px; max-width: 40em; font-size: 19px; color: var(--mut); }
+.b-hero p { margin: 22px auto 30px; max-width: 43em; font-size: 19px; color: var(--mut); }
 .b-hero .row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .b-tabs { display: inline-flex; gap: 4px; margin: 56px auto 22px; padding: 5px; border-radius: 99px; background: var(--paper); border: 1px solid var(--line); flex-wrap: wrap; justify-content: center; }
 .b-tabs span { padding: 9px 18px; border-radius: 99px; font-size: 14px; font-weight: 600; color: var(--mut); }
 .b-tabs span.on { background: var(--vine); color: var(--ivory); }
 .b-stage { max-width: 1100px; margin: 0 auto; position: relative; text-align: left; }
-.b-layer { position: relative; max-width: 1120px; margin: 56px auto 0; height: 600px; text-align: left; }
-.b-back { position: absolute; left: 0; top: 0; width: 66%; }
-.b-front { position: absolute; right: 0; top: 96px; width: 60%; }
+.b-layer { position: relative; max-width: 1120px; margin: 56px auto 0; height: 640px; text-align: left; }
+.b-back { position: absolute; left: 0; top: 0; width: 74%; }
+.b-front { position: absolute; right: 0; top: 210px; width: 50%; }
 .b-front .frame { box-shadow: 0 40px 90px -30px rgba(28,61,52,.55), 0 0 0 1px rgba(28,61,52,.08); }
-.b-tag { position: absolute; top: -14px; left: 22px; z-index: 2; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 6px 12px; border-radius: 99px; background: var(--vine); color: var(--ivory); }
-.b-tag--gold { background: var(--gold); color: var(--vine-dark); }
+/* Window label: quiet small caps on the right of the title bar, with a coloured dot. */
+.frame-bar .b-tag { flex: none; display: inline-flex; align-items: center; gap: 7px; background: none; padding: 0 2px 0 0; border-radius: 0; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--mut); text-align: right; min-width: 64px; justify-content: flex-end; }
+.frame-bar .b-tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--vine); }
+.frame-bar .b-tag--gold::before { background: var(--gold); }
+.frame-bar span:not(.b-tag) { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.b-layer > div { min-width: 0; }
 @media (max-width: 900px) {
   .b-layer { height: auto; display: grid; gap: 26px; margin-top: 36px; }
   .b-back, .b-front { position: relative; width: 100%; top: 0; }
@@ -218,11 +222,11 @@
 </div></header>
 
 <section class="b-hero"><div class="wrap">
-  <span class="eyebrow">The Organisation OS</span><h1>Every part of your organisation, <em>in one place.</em></h1><p>Your website, courses, events, giving and members — one system, one login. Built for institutes and academies, and ready for any organisation that gathers people.</p>
+  <span class="eyebrow">The Organisation OS</span><h1>Every part of your organisation, <em>in one place.</em></h1><p>Your website, courses, events, giving, invoices and members — one system, one login. Built for institutes and academies, and ready for any organisation that gathers people.</p>
   <div class="row" style="align-items:center;gap:22px"><a class="btn btn-vine" href="https://console.vinestack.app/start">Build your site</a><a href="https://cornerstone.vinestack.app" target="_blank" rel="noopener" style="font-weight:600;color:var(--vine);border-bottom:1.5px solid var(--gold)">See a live example →</a></div>
   <div class="b-layer">
-    <div class="b-back"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>cornerstone.vinestack.app/academy/admin/programs</span></div><img src="/img/r-programs.jpg" alt="" style="aspect-ratio:1440/820;object-fit:cover;object-position:top"></div><span class="b-tag">Your admin</span></div>
-    <div class="b-front"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>cornerstone.vinestack.app</span></div><img src="/img/site-cornerstone.jpg" alt="" style="aspect-ratio:1440/900;object-fit:cover;object-position:top"></div><span class="b-tag b-tag--gold">Your website</span></div>
+    <div class="b-back"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>cornerstone.vinestack.app/academy/admin/programs</span><span class="b-tag">Admin</span></div><img src="/img/r-programs.jpg" alt="" style="aspect-ratio:1440/820;object-fit:cover;object-position:top"></div></div>
+    <div class="b-front"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>cornerstone.vinestack.app</span><span class="b-tag b-tag--gold">Website</span></div><img src="/img/site-cornerstone.jpg" alt="" style="aspect-ratio:1440/840;object-fit:cover;object-position:top"></div></div>
   </div>
 </div></section>
 <section class="b-logos"><div class="wrap"><p>Running in production at <b>Veritas Probe Academy</b> <i>·</i> <b>Trivandrum Gospel Hall</b></p></div></section>
@@ -232,7 +236,7 @@
     <div><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>cornerstone.vinestack.app/academy/admin/programs</span></div><img src="/img/r-programs.jpg" alt="" style="aspect-ratio:1440/760;object-fit:cover;object-position:top"></div></div></div>
 </div></section>
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="sec-head"><span class="eyebrow">Everything included</span><h2>One system instead of <em>six tools.</em></h2></div>
-  <div class="b-grid"><div><b>Website &amp; blog</b><p>Designed templates, your own domain, articles in more than one language.</p></div><div><b>Courses &amp; grading</b><p>Lessons, quizzes, assignments, progress and feedback.</p></div><div><b>Programs &amp; events</b><p>Batches, camps and open days — with registration and capacity.</p></div><div><b>Fees &amp; giving</b><p>Into your own account, with receipts and recurring giving.</p></div><div><b>Members &amp; roles</b><p>Admins, faculty, organisers, finance — each sees what they need.</p></div><div><b>Forms &amp; enquiries</b><p>Contact and visit forms, answered in one inbox.</p></div><div><b>Emails &amp; newsletters</b><p>Branded announcements and new-article emails.</p></div><div><b>Works with Claude</b><p>Approve sign-ups, check grading, publish — by asking. Every change confirmed first.</p></div></div></div></section>
+  <div class="b-grid"><div><b>Website &amp; blog</b><p>Designed templates, your own domain, articles in more than one language.</p></div><div><b>Courses &amp; grading</b><p>Lessons, quizzes, assignments, progress and feedback.</p></div><div><b>Programs &amp; events</b><p>Batches, camps and open days, with registration, e-tickets and check-in at the door.</p></div><div><b>Fees &amp; giving</b><p>Into your own account, with receipts and recurring giving.</p></div><div><b>Invoices</b><p>Bill clients, parents or anyone. They pay online or by UPI, and it’s marked paid on its own.</p></div><div><b>Members &amp; roles</b><p>Admins, faculty, organisers, finance — each sees what they need.</p></div><div><b>Forms &amp; emails</b><p>Enquiries in one inbox, plus branded announcements and newsletters.</p></div><div><b>Works with Claude</b><p>Approve sign-ups, check grading, publish — by asking. Every change confirmed first.</p></div></div></div></section>
 <section class="sec" id="sites" style="background:var(--ivory2)"><div class="wrap"><div class="b-split rev">
   <div style="display:grid;gap:18px"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>console.vinestack.app/start</span></div><img src="/img/signup-review.jpg" alt=""></div><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>cornerstone.vinestack.app/academy/admin/website</span></div><img src="/img/r-website.jpg" alt="" style="aspect-ratio:1440/560;object-fit:cover;object-position:top"></div></div>
   <div class="sec-head" style="margin:0"><span class="eyebrow">Start in minutes</span><h2>Your website first. <em>Everything else when you’re ready.</em></h2><p>Answer a few questions and see your site — with your name, colours and words — before you publish.</p>
